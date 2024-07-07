@@ -2,7 +2,7 @@
 name: Custom issue template
 about: Template for User Stories
 title: 'USER STORY: '
-labels: ''
+labels: User Story
 assignees: andersganander
 
 ---
