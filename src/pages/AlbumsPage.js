@@ -26,11 +26,8 @@ function AlbumsPage({ message, filter = "" }) {
             const { data } = await axiosReq.get(`/albums/`);
             console.log(data);
             setAlbums(data);
-            //console.log(albums.results.length);
             setHasLoaded(true);
-            //console.log('Has loaded ')
         } catch (err) {
-            console.log('ERROR...')
             console.log(err);
         }
     };
@@ -39,11 +36,6 @@ function AlbumsPage({ message, filter = "" }) {
     fetchAlbums();
   }, [filter, pathname]);
 
-  useEffect(() => {
-    if (albums && albums.results) {
-      console.log('LENGTH ' + albums.results.length);
-    }
-  }, [albums]);
 
   return (
     <Row className="h-100">
@@ -51,8 +43,8 @@ function AlbumsPage({ message, filter = "" }) {
         <p>Popular profiles mobile</p>
         {hasLoaded ? (
           <>
-            {albums.results && albums.results.length ? (
-              albums.results.map((album) => (
+            {albums ? (
+              albums.map((album) => (
                 <Album key={album.id} {...album} setAlbums={setAlbums} />
               ))
             ) : (
