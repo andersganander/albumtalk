@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 const NavBar = () => {
+  const currentUser = useCurrentUser();
+  const loggedIn = <>{currentUser?.username}</>;
+  const loggedOut = (
+    <>
+      <NavLink
+        exact
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/signin">
+        SIGNIN
+      </NavLink>
+      <NavLink
+        exact
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/signup">
+        SIGNUP
+      </NavLink>
+    </>
+  );
+
   return (
     <Navbar className={styles.NavBar} expand="md" fixed="top">
       <Container>
@@ -29,20 +51,7 @@ const NavBar = () => {
                 to="/reviews">
               THEREVIEWS
             </NavLink>
-            <NavLink 
-                exact
-                className={styles.NavLink}
-                activeClassName={styles.Active}
-                to="/signin">
-              SIGNIN
-            </NavLink>
-            <NavLink 
-                exact
-                className={styles.NavLink}
-                activeClassName={styles.Active}
-                to="/signup">
-              SIGNUP
-            </NavLink>
+            {currentUser? loggedIn : loggedOut}
           </Nav>
         </Navbar.Collapse>
       </Container>
