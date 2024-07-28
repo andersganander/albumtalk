@@ -9,8 +9,8 @@ import AlbumPage from "./pages/AlbumPage";
 import AlbumsPage from "./pages/AlbumsPage";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
-import { createContext, useEffect, useState } from "react";
-import axios from "axios";
+// import { createContext, useEffect, useState } from "react";
+// import axios from "axios";
 
 
 function App() {
