@@ -17,7 +17,8 @@ const Album = (props) => {
     release_year,
     style,
     title,
-    wikipedia_id
+    wikipedia_id,
+    reviews_count,
   } = props;
 
 // Lägg till reviews_count här och i serializern
@@ -54,7 +55,7 @@ return (
         <Link to={`/albums/${id}`}>
           <span class="material-symbols-outlined">rate_review</span>
         </Link>
-       
+        {reviews_count}
       </div>
     </Card.Footer>
 
