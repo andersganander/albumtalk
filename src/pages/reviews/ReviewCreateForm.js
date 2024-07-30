@@ -11,10 +11,11 @@ import { axiosRes } from "../../api/axiosDefaults";
 function ReviewCreateForm(props) {
   const { album, setAlbum, setReviews, profileImage, profile_id } = props;
 
-  const [reviewData, setReviewData] = useState({
-    content: "",
-    rating: 1 ,
-  });
+  // const [reviewData, setReviewData] = useState({
+  //   content: "",
+  //   rating: 1 ,
+  // });
+  
   //const { content, rating } = reviewData;
 
   //const [content, setContent] = useState("");
@@ -39,6 +40,7 @@ function ReviewCreateForm(props) {
 
     try {
       const { data } = await axiosRes.post("/reviews/", formData);
+      console.log('DATA '+data);
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: [data, ...prevReviews.results],
@@ -54,7 +56,7 @@ function ReviewCreateForm(props) {
       setContent("");
       setRating(0);
     } catch (err) {
-      console.log(err);
+      console.log('ERR' + err);
     }
   };
 

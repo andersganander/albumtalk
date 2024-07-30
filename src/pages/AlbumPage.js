@@ -17,6 +17,7 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 function AlbumPage() {
   // Fetch album data from API and pass it to the Album component
   const { id } = useParams();
+  console.log('ID '+id)
   const [album, setAlbum] = useState({ results: [] });
 
   const currentUser = useCurrentUser();
@@ -31,8 +32,10 @@ function AlbumPage() {
           axiosReq.get(`/reviews/?album=${id}`),
         ]);
         setAlbum({ results: [album] });
-        setReviews({ results: reviews });
+        //setReviews({ results: [reviews] });
+        setReviews(reviews);
         console.log(album);
+        console.log(reviews);
       } catch (err) {
         console.log(err);
       }
@@ -56,16 +59,16 @@ function AlbumPage() {
           setReviews={setReviews}
         />
         ) : reviews.results.length ? (
-          "Comments"
+          "Reviews"
         ) : null}
-        {reviews.results.length ? (
+        {reviews ? (
           reviews.results.map((review) => (
             <Review key={review.id} {...review} />
           ))
         ) : currentUser ? (
-          <span>No comments yet, be the first to comment!</span>
+          <span>No reviews yet, be the first to comment!</span>
         ) : (
-          <span>No comments... yet</span>
+          <span>No reviews... yet</span>
         )}
         </Container>
       </Col>
