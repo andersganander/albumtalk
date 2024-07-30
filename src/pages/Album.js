@@ -20,8 +20,7 @@ const Album = (props) => {
     wikipedia_id
   } = props;
 
-  //const currentUser = useCurrentUser();
-  //const is_owner = currentUser?.username === owner;
+// Lägg till reviews_count här och i serializern
 
 // KAnske byta ut mot accordion för att dölja description
 
@@ -33,7 +32,9 @@ return (
 
     <Card.Body>
       <Media className="d-flex">
-        <img src={image_url} height={250} />
+        <Link to={`/albums/${id}`}>
+          <img src={image_url} height={250} />
+        </Link>
         <div className="d-flex">
           <span>Genre: {genre} </span>
           <span>Style: {style}</span>
@@ -47,6 +48,15 @@ return (
         {description}
       </Card.Text>
     </Card.Body>
+
+    <Card.Footer>
+      <div className={styles.PostBar}>
+        <Link to={`/albums/${id}`}>
+          <span class="material-symbols-outlined">rate_review</span>
+        </Link>
+       
+      </div>
+    </Card.Footer>
 
   </Card>
 ); 

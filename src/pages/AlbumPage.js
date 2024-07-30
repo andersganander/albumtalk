@@ -8,19 +8,30 @@ import appStyles from "../App.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
 import Album from "./Album";
+import Review from "./reviews/Review";
+
+
+import ReviewCreateForm from "./reviews/ReviewCreateForm";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 
 function AlbumPage() {
   // Fetch album data from API and pass it to the Album component
   const { id } = useParams();
   const [album, setAlbum] = useState({ results: [] });
 
+  const currentUser = useCurrentUser();
+  const profile_image = currentUser?.profile_image;
+  const [reviews, setReviews] = useState({ results: [] });
+
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: album }] = await Promise.all([
+        const [{ data: album }, { data: reviews}] = await Promise.all([
           axiosReq.get(`/albums/${id}`),
+          axiosReq.get(`/reviews/?album=${id}`),
         ]);
         setAlbum({ results: [album] });
+        setReviews({ results: reviews });
         console.log(album);
       } catch (err) {
         console.log(err);
@@ -36,7 +47,26 @@ function AlbumPage() {
         <p>Popular albums for mobile</p>
         <Album {...album.results[0]} setAlbums={setAlbum} albumPage />
         <Container className={appStyles.Content}>
-          Reviews
+        {currentUser ? (
+          <ReviewCreateForm
+          profile_id={currentUser.profile_id}
+          profileImage={profile_image}
+          album={id}
+          setAlbum={setAlbum}
+          setReviews={setReviews}
+        />
+        ) : reviews.results.length ? (
+          "Comments"
+        ) : null}
+        {reviews.results.length ? (
+          reviews.results.map((review) => (
+            <Review key={review.id} {...review} />
+          ))
+        ) : currentUser ? (
+          <span>No comments yet, be the first to comment!</span>
+        ) : (
+          <span>No comments... yet</span>
+        )}
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
