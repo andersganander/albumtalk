@@ -63,7 +63,7 @@ function AlbumPage() {
         ) : null}
         {reviews ? (
           reviews.results.map((review) => (
-            <Review key={review.id} {...review} />
+            <Review key={review.id} {...review } />
           ))
         ) : currentUser ? (
           <span>No reviews yet, be the first to comment!</span>

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/Review.module.css";
 
-const Review = (props) => {
-  const { profile_id, profile_image, owner, updated_at, content, rating } = props;
+const Review = (props, albumtitle) => {
+  const { profile_id, profile_image, owner, updated_at, content, rating, album, album_title } = props;
 
   return (
     <div>
@@ -16,6 +16,7 @@ const Review = (props) => {
           <Avatar src={profile_image} />
         </Link>
         <Media.Body className="align-self-center ml-2">
+          <span className={styles.Owner}>{album_title}</span><br />
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           <p>{content}</p>
