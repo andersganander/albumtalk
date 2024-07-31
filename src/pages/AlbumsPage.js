@@ -44,7 +44,7 @@ function AlbumsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {albums ? (
-              albums.map((album) => (
+              albums.results.map((album) => (
                 <Album key={album.id} {...album} setAlbums={setAlbums} />
               ))
             ) : (
