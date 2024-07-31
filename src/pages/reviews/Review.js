@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {  useState } from "react";
 import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
@@ -8,11 +8,13 @@ import styles from "../../styles/Review.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
+import ReviewEditForm from "./ReviewEditForm";
+
 
 const Review = (props, albumtitle) => {
   
   const { profile_id, profile_image, owner, updated_at, content, rating, album, album_title, id, setAlbum, setReviews } = props;
-
+  const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
@@ -35,8 +37,10 @@ const Review = (props, albumtitle) => {
     } catch (err) {}
   };
 
+
+
   return (
-    <div>
+    <>
       <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
@@ -46,14 +50,31 @@ const Review = (props, albumtitle) => {
           <span className={styles.Owner}>{album_title}</span><br />
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
-          <p>{content}</p>
-          <p>{rating}</p>
+          {showEditForm ? (
+            <ReviewEditForm 
+              id={id}
+              profile_id={profile_id}
+              content={content}
+              rating={rating}
+              profileImage={profile_image}
+              setReviews={setReviews}
+              setShowEditForm={setShowEditForm}
+            />
+          ) : (
+            <>
+            <p>{content}</p>
+            <span className={styles.Rating}>Rating: {rating}/5</span>
+            </>
+          )}
         </Media.Body>
-        {is_owner && (
-          <MoreDropdown handleEdit={() => {}} handleDelete={handleDelete} />
+        {is_owner && !showEditForm && (
+          <MoreDropdown
+            handleEdit={() => setShowEditForm(true)}
+            handleDelete={handleDelete}
+          />
         )}
       </Media>
-    </div>
+    </>
   );
 };
 
