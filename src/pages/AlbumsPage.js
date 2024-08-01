@@ -14,6 +14,8 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../api/axiosDefaults";
 
 import NoResults from "../assets/no-results.png";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../utils/utils";
 
 function AlbumsPage({ message, filter = "" }) {
   const [albums, setAlbums] = useState({ results: [] });
@@ -44,9 +46,20 @@ function AlbumsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {albums ? (
-              albums.results.map((album) => (
-                <Album key={album.id} {...album} setAlbums={setAlbums} />
-              ))
+             <InfiniteScroll
+             children={albums.results.map((album) => (
+               <Album key={album.id} {...album} setAlbums={setAlbums} />
+             ))}
+             dataLength={albums.results.length}
+             loader={<Asset spinner />}
+             hasMore={!!albums.next}
+             next={() => fetchMoreData(albums, setAlbums)}
+             endMessage={
+              <p style={{ textAlign: 'center' }}>
+                <b>No more albums to show...</b>
+              </p>
+            }
+           />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />

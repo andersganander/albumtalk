@@ -14,6 +14,8 @@ import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
 import NoResults from "../../assets/no-results.png";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function ReviewsPage({ message, filter = "" }) {
   const [reviews, setReviews] = useState({ results: [] });
@@ -43,10 +45,21 @@ function ReviewsPage({ message, filter = "" }) {
         <p>Popular profiles mobile</p>
         {hasLoaded ? (
           <>
-            {reviews ? (
-              reviews.results.map((review) => (
-                <Review key={review.id} {...review} setReviews={setReviews} />
-              ))
+            {reviews ? (      
+              <InfiniteScroll
+                children={reviews.results.map((review) => (
+                  <Review key={review.id} {...review} setReviews={setReviews} />
+                ))}
+                dataLength={reviews.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!reviews.next}
+                next={() => fetchMoreData(reviews, setReviews)}
+                endMessage={
+                  <p style={{ textAlign: 'center' }}>
+                    <b>No more reviews...</b>
+                  </p>
+                }
+             />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
