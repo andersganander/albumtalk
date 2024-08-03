@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
 import Album from "./Album";
 import Review from "./reviews/Review";
+import { useHistory } from "react-router";
 
 
 import ReviewCreateForm from "./reviews/ReviewCreateForm";
@@ -23,6 +24,7 @@ function AlbumPage() {
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
   const [reviews, setReviews] = useState({ results: [] });
+  const history = useHistory();
 
   useEffect(() => {
     const handleMount = async () => {
@@ -74,6 +76,9 @@ function AlbumPage() {
         ) : (
           <span>No reviews... yet</span>
         )}
+        <span>
+          <button onClick={() => history.goBack()}>BACK</button>
+        </span>
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
