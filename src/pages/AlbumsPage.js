@@ -56,7 +56,7 @@ function AlbumsPage({ message, filter = "" }) {
              next={() => fetchMoreData(albums, setAlbums)}
              endMessage={
               <p style={{ textAlign: 'center' }}>
-                <b>No more albums to show...</b>
+                <b>I don't know where I'm going from here, but I promise it won't be boring.</b>
               </p>
             }
            />

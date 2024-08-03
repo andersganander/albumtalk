@@ -10,6 +10,7 @@ import AlbumsPage from "./pages/AlbumsPage";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
+import ProfilePage from "./pages/profiles/ProfilePage";
 // import { createContext, useEffect, useState } from "react";
 // import axios from "axios";
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/albums/:id" render={() => <AlbumPage />} />
+          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>

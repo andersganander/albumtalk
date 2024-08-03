@@ -56,7 +56,7 @@ function ReviewsPage({ message, filter = "" }) {
                 next={() => fetchMoreData(reviews, setReviews)}
                 endMessage={
                   <p style={{ textAlign: 'center' }}>
-                    <b>No more reviews...</b>
+                    <b>I don't know where I'm going from here, but I promise it won't be boring.</b>
                   </p>
                 }
              />
