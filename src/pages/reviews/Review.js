@@ -13,7 +13,7 @@ import ReviewEditForm from "./ReviewEditForm";
 
 const Review = (props, albumtitle) => {
   
-  const { profile_id, profile_image, owner, updated_at, content, rating, album, album_title, id, setAlbum, setReviews } = props;
+  const { profile_id, profile_image, owner, updated_at, content, rating, album, album_title, id, setAlbum, setReviews, comments_count } = props;
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
@@ -66,6 +66,12 @@ const Review = (props, albumtitle) => {
             <>
             <p>{content}</p>
             <span className={styles.Rating}>Rating: {rating}/5</span>
+            <span>
+              <Link to={`/reviews/${id}`}>
+                <span class="material-symbols-outlined">chat</span>
+            </Link>
+            {comments_count}
+            </span>
             </>
           )}
         </Media.Body>
