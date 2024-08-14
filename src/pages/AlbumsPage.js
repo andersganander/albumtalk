@@ -21,28 +21,49 @@ function AlbumsPage({ message, filter = "" }) {
   const [albums, setAlbums] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     const fetchAlbums = async () => {
-        try {
-            const { data } = await axiosReq.get(`/albums/`);
-            console.log(data);
-            setAlbums(data);
-            setHasLoaded(true);
-        } catch (err) {
-            console.log(err);
-        }
+      try {
+        const { data } = await axiosReq.get(`/albums/?${filter}search=${query}`);
+        setAlbums(data);
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     setHasLoaded(false);
-    fetchAlbums();
-  }, [filter, pathname]);
+    const timer = setTimeout(() => {
+      fetchAlbums();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [filter, query, pathname]);
 
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
+
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form
+          className={styles.SearchBar}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search albums"
+          />
+        </Form>
+
         {hasLoaded ? (
           <>
             {albums ? (
