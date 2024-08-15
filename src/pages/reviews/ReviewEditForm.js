@@ -4,13 +4,24 @@ import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
 
 import styles from "../../styles/ReviewCreateEditForm.module.css";
+import { Rating } from 'react-simple-star-rating'
 
 function ReviewEditForm(props) {
   const { id, content, rating, setShowEditForm, setReviews } = props;
 
   const [formContent, setFormContent] = useState(content);
-  const [formRating, setFormRating] = useState(rating);
+  const [formRating, setRating] = useState(rating);
 
+    // Optinal callback functions
+    const onPointerEnter = () => console.log('Enter')
+    const onPointerLeave = () => console.log('Leave')
+    const onPointerMove = (value, index) => console.log(value, index)
+
+    const handleRating = (rate) => {
+      setRating(rate)
+
+      // other logic
+    }
 
   // const handleChange = (event) => {
   //   setFormContent(event.target.value);
@@ -52,14 +63,20 @@ function ReviewEditForm(props) {
           onChange={(e) => setFormContent(e.target.value)}
           rows={4}
         />
-        <Form.Control
-          type="number"
-          className={styles.NumberInput}
-          value={formRating}
-          onChange={(e) => setFormRating(e.target.value)}
-          min={1}
-          max={5}
+       
+        <div>
+          <Rating
+            onClick={handleRating}
+            onPointerEnter={onPointerEnter}
+            onPointerLeave={onPointerLeave}
+            onPointerMove={onPointerMove}
+            /* Available Props */
+            initialValue={rating}
+            iconsCount={5}
+            size={30}
           />
+        </div>
+
       </Form.Group>
       <div className="text-right">
         <button

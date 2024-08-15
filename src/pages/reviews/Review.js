@@ -9,6 +9,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
 
 import ReviewEditForm from "./ReviewEditForm";
+import { Rating } from 'react-simple-star-rating'
 
 
 const Review = (props, albumtitle) => {
@@ -17,6 +18,20 @@ const Review = (props, albumtitle) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const [star_rating, setStarRating] = useState(0)
+
+  // Catch Rating value
+  const handleRating = (rate) => {
+    setStarRating(rate)
+
+    // other logic
+  }
+  // Optinal callback functions
+  const onPointerEnter = () => console.log('Enter')
+  const onPointerLeave = () => console.log('Leave')
+  const onPointerMove = (value, index) => console.log(value, index)
+
 
   const handleDelete = async () => {
     try {
@@ -66,12 +81,26 @@ const Review = (props, albumtitle) => {
             <>
             <p>{content}</p>
             <span className={styles.Rating}>Rating: {rating}/5</span>
+
             <span>
               <Link to={`/reviews/${id}`}>
                 <span class="material-symbols-outlined">chat</span>
             </Link>
             {comments_count}
             </span>
+            <div>
+              <Rating
+                onClick={handleRating}
+                onPointerEnter={onPointerEnter}
+                onPointerLeave={onPointerLeave}
+                onPointerMove={onPointerMove}
+                /* Available Props */
+                initialValue={rating}
+                iconsCount={5}
+                readonly={true}
+                size={30}
+              />
+            </div>
             </>
           )}
         </Media.Body>

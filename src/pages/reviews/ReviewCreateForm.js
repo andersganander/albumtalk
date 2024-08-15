@@ -7,6 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/ReviewCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { Rating } from 'react-simple-star-rating'
 
 function ReviewCreateForm(props) {
   const { album, setAlbum, setReviews, profileImage, profile_id } = props;
@@ -23,12 +24,24 @@ function ReviewCreateForm(props) {
     const [rating, setRating] = useState(0)
     const [content, setContent] = useState('')
 
+     // Optinal callback functions
+    const onPointerEnter = () => console.log('Enter')
+    const onPointerLeave = () => console.log('Leave')
+    const onPointerMove = (value, index) => console.log(value, index)
+
 //   const handleChange = (event) => {
 //     setReviewData({
 //         ...reviewData,
 //         [event.target.name]: event.target.value,
 //     });
 //   };
+
+    const handleRating = (rate) => {
+      setRating(rate)
+
+      // other logic
+    }
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -75,15 +88,21 @@ function ReviewCreateForm(props) {
             onChange={(e) => setContent(e.target.value)}
             rows={4}
           />
-            <Form.Control
-                type="number"
-                className={styles.NumberInput}
-                placeholder="Rating"
-                value={rating}
-                onChange={(e) => setRating(e.target.value)}
-                min={1}
-                max={5}
-            />
+            
+
+            <div>
+              <Rating
+                onClick={handleRating}
+                onPointerEnter={onPointerEnter}
+                onPointerLeave={onPointerLeave}
+                onPointerMove={onPointerMove}
+                /* Available Props */
+                initialValue={rating}
+                iconsCount={5}
+                size={30}
+              />
+            </div>
+
         </InputGroup>
       </Form.Group>
       <button
