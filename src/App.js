@@ -12,6 +12,8 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import ReviewPage from "./pages/reviews/ReviewPage";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+
 // import { createContext, useEffect, useState } from "react";
 // import axios from "axios";
 
@@ -31,6 +33,11 @@ function App() {
           <Route exact path="/albums/:id" render={() => <AlbumPage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit"
+            render={() => <ProfileEditForm />}
+          />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
