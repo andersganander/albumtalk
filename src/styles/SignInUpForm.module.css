@@ -1,5 +1,6 @@
 .Row {
     height: calc(100vh - 81px);
+    justify-content: space-around;
   }
   .Input {
     background: #ffffff;
@@ -12,14 +13,18 @@
   }
   
   .Header {
+    font-family: 'Bricolage Grotesque';
+    /*font-weight: bolder!important;*/
+    /*font-size: x-large!important;*/
+    color:rgb(164, 45, 45);
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
     text-align: center;
-    letter-spacing: 0.2em;
+    /*letter-spacing: 0.2em;*/
     text-transform: uppercase;
-    color: #2142b2;
+    /*color: #2142b2;*/
   }
   
   .Link {
@@ -35,6 +40,11 @@
   
   .Container {
     padding: 30px 10px;
+  }
+
+  .ContainerRight {
+    padding: 30px 10px;
+    justify-content: right;
   }
   
   .SignInCol {

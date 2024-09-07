@@ -15,6 +15,9 @@ import {
   Alert,
 } from "react-bootstrap";
 import axios from "axios";
+import img1 from "../../assets/AS_eyes_2.png"
+import img2 from "../../assets/AS_mouth.png"
+
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -47,7 +50,15 @@ const SignUpForm = () => {
 
   return (
     <Row className={styles.Row}>
-      <Col className="my-auto py-2 p-md-2" md={6}>
+      <Col className="my-auto py-2 p-md-2" md={9}>
+
+      <Container className={`mt-3 ${appStyles.Content}`}>
+        <Image
+            className={`${appStyles.FillerImage}`}
+            src={ img1 }
+          />
+        </Container>
+
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
@@ -103,12 +114,12 @@ const SignUpForm = () => {
               </Alert>
             ))}
 
-            <Button
-              variant="outline-danger"
-              type="submit"
-            >
-              SIGNUP
-            </Button>
+            <div className="d-flex justify-content-end">
+              <Button variant="outline-secondary" type="submit">
+                SIGNUP
+              </Button>
+            </div>
+
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
                 {message}
@@ -123,15 +134,7 @@ const SignUpForm = () => {
           </Link>
         </Container>
       </Col>
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
-      >
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://www.theaudiodb.com/images/media/artist/fanart/xsypww1363521525.jpg"}
-        />
-      </Col>
+     
     </Row>
   );
 };
