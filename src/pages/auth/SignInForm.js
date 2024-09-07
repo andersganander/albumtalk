@@ -14,7 +14,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import hero from "../../assets/IMG_1001.jpg"
+import img1 from "../../assets/AS_eyes_2.png"
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
@@ -73,7 +73,15 @@ function SignInForm() {
 
   return (
     <Row className={styles.Row}>
-      <Col className="my-auto p-0 p-md-2" md={6}>
+      <Col className="my-auto p-0 p-md-2" md={9}>
+
+      <Container className={`mt-3 ${appStyles.Content}`}>
+        <Image
+            className={`${appStyles.FillerImage}`}
+            src={ img1 }
+          />
+        </Container>
+
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign in</h1>
           <Form onSubmit={handleSubmit}>
@@ -110,12 +118,11 @@ function SignInForm() {
                 {message}
               </Alert>
             ))}
-            <Button
-              variant="outline-danger"
-              type="submit"
-            >
-              SIGNIN
-            </Button>
+            <div className="d-flex justify-content-end">
+              <Button variant="outline-secondary" type="submit">
+                SIGNIN
+              </Button>
+            </div>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
                 {message}
@@ -128,15 +135,6 @@ function SignInForm() {
             Don't have an account? <span>Sign up now!</span>
           </Link>
         </Container>
-      </Col>
-      <Col
-        md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
-      >
-        <Image
-          className={`${appStyles.FillerImage}`}
-          src={ hero }
-        />
       </Col>
     </Row>
   );
