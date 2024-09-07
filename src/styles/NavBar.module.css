@@ -5,10 +5,11 @@
     border: 1px solid #dadadf;
   }
 
-.navbar-brand{
-    font-family: 'Bricolage Grotesque';
-    font-weight: bolder;
-    color:rgb(164, 45, 45);
+.NavBrand{
+    font-family: 'Bricolage Grotesque'!important;
+    font-weight: bolder!important;
+    font-size: x-large!important;
+    color:rgb(164, 45, 45)!important;
 }
   
 .NavLink {
@@ -26,10 +27,3 @@ a:hover {
     color: lightgrey;
     text-decoration: none;
 }
-
-/* a { 
-color: darkred !important;
-padding-right: 5px;
-font-family: 'Bricolage Grotesque';
-font-weight: bolder;
-} */
