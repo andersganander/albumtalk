@@ -5,6 +5,53 @@
     margin-bottom: 16px;
     text-align: center;
   }
+
+  .DescriptionHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Description {
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+
+  .Title {
+    font-family: 'Bricolage Grotesque';
+    color:rgb(164, 45, 45);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    /*letter-spacing: 0.2em;*/
+    text-transform: uppercase;
+    word-spacing: -5px;
+  }
+
+  .CoverDetails {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  .Details {
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Bricolage Grotesque';
+    color:rgb(164, 45, 45);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .DetailRow {
+    margin-bottom: 20px;
+  }
   
   /* .Post figure,
   h5 {

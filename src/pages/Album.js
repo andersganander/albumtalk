@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Album.module.css";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Accordion, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 //import Avatar from "../../components/Avatar";
 
@@ -28,34 +28,62 @@ const Album = (props) => {
 return (
   <Card className={styles.Album}>
     <Card.Body>
-      <Card.Title>{title}, {release_year}</Card.Title>
+      <Card.Title>
+        <div className={styles.Title}>
+          {title}
+        </div>
+       
+      </Card.Title>
     </Card.Body>
 
     <Card.Body>
-      <Media className="d-flex">
+      <Media className={styles.CoverDetails}>
         <Link to={`/albums/${id}`}>
           <img src={image_url} height={250} />
         </Link>
-        <div className="d-flex">
-          <span>Genre: {genre} </span>
-          <span>Style: {style}</span>
-          <span>Format: {album_format}</span>
+        <div className={styles.Details}>
+          <div className={styles.DetailRow}>{release_year} </div>
+          <div className={styles.DetailRow}>{label} </div>
+          <div className={styles.DetailRow}>{genre} </div>
+          <div className={styles.DetailRow}>{style}</div>
+          <div className={styles.DetailRow}>{album_format}</div>
         </div>
       </Media>
     </Card.Body>
 
-    <Card.Body>
-      <Card.Text>
-        {description}
-      </Card.Text>
-    </Card.Body>
+    <Accordion>
+      <Card>
+        <Accordion.Toggle as={Card.Header} eventKey="0">
+          <div className={styles.DescriptionHeader}>
+            Description 
+          <span class="material-symbols-outlined">
+            top_panel_open
+            </span>
+          </div>      
+        </Accordion.Toggle>
+        <Accordion.Collapse eventKey="0">
+          <Card.Body> 
+            <div className={styles.Description}>
+            {description} 
+            </div>
+           
+            <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
+            <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank'>Discogs</a>
+            
+          </Card.Body>
+        </Accordion.Collapse>
+      </Card>
 
+    </Accordion>
+   
     <Card.Footer>
       <div className={styles.PostBar}>
         <Link to={`/albums/${id}`}>
-          <span class="material-symbols-outlined">rate_review</span>
+          <span class="material-symbols-outlined">rate_review</span>   
+          {reviews_count}
         </Link>
-        {reviews_count}
+       
+        <span class="material-symbols-outlined">album</span>
       </div>
     </Card.Footer>
 
