@@ -57,7 +57,7 @@ const Review = (props, albumtitle) => {
   return (
     <>
       <hr />
-      <Media>
+      <Media className={styles.Background}>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
@@ -79,16 +79,10 @@ const Review = (props, albumtitle) => {
             />
           ) : (
             <>
-            <p>{content}</p>
-            <span className={styles.Rating}>Rating: {rating}/5</span>
+            <p className={styles.Content}>{content}</p>
 
+           <div className={styles.Footer}>
             <span>
-              <Link to={`/reviews/${id}`}>
-                <span class="material-symbols-outlined">chat</span>
-            </Link>
-            {comments_count}
-            </span>
-            <div>
               <Rating
                 onClick={handleRating}
                 onPointerEnter={onPointerEnter}
@@ -100,6 +94,13 @@ const Review = (props, albumtitle) => {
                 readonly={true}
                 size={30}
               />
+            </span>
+            <span>
+              <Link to={`/reviews/${id}`}>
+                <span class="material-symbols-outlined">chat</span>
+            </Link>
+            {comments_count}
+            </span>
             </div>
             </>
           )}

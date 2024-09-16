@@ -26,6 +26,7 @@
     text-align: center;
     /*letter-spacing: 0.2em;*/
     text-transform: uppercase;
+    /* https://www.shecodes.io/athena/64094-how-to-change-the-space-between-words-in-css */
     word-spacing: -5px;
   }
 

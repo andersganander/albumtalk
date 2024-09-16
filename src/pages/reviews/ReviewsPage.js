@@ -9,7 +9,7 @@ import Review from "./Review";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/AlbumsPage.module.css";
+import searchStyles from "../../styles/AlbumsPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -51,9 +51,9 @@ function ReviewsPage({ message, filter = "" }) {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
 
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <i className={`fas fa-search ${searchStyles.SearchIcon}`} />
         <Form
-          className={styles.SearchBar}
+          className={searchStyles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
           <Form.Control
