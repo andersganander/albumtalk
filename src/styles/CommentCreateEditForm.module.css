@@ -1,13 +1,13 @@
 .Form {
     border: none;
-    border-bottom: 2px #00d1ff solid;
+    border-bottom: 2px rgb(164, 45, 45) solid;
   }
   
   .Button {
     border: none;
-    background-color: #242a3d;
-    color: aliceblue;
-    border-radius: 100px;
+    background-color: rgb(164, 45, 45);
+    color: white;
+    /*border-radius: 100px;*/
     padding: 4px 10px;
     min-width: 75px;
     margin: 5px;
@@ -15,6 +15,6 @@
   
   .Button:hover {
     cursor: pointer;
-    background-color: aliceblue;
-    color: #242a3d;
+    background-color: whitesmoke;
+    color: rgb(164, 45, 45);
   }

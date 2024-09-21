@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../App.module.css";
+import styles from "../styles/AlbumPage.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
 import Album from "./Album";
@@ -77,7 +78,7 @@ function AlbumPage() {
           <span>No reviews... yet</span>
         )}
         <span>
-          <button onClick={() => history.goBack()}>BACK</button>
+          <button className={styles.Button} onClick={() => history.goBack()}>BACK</button>
         </span>
         </Container>
       </Col>

@@ -63,7 +63,7 @@ function CommentCreateForm(props) {
         disabled={!content.trim()}
         type="submit"
       >
-        Comment
+        COMMENT
       </button>
     </Form>
   );

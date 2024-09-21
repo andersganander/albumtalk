@@ -45,7 +45,7 @@ const Comment = (props) => {
   return (
     <div>
       <hr />
-      <Media>
+      <Media className={styles.Background}>
         <Link to={`/profiles/${profile_id}`}>
           <Avatar src={profile_image} />
         </Link>
@@ -64,7 +64,7 @@ const Comment = (props) => {
             />
           ) : (
             <>
-            <p>{content}</p>
+            <p className={styles.Content}>{content}</p>
             </>
           )}
 
