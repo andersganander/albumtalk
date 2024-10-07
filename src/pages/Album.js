@@ -53,14 +53,23 @@ return (
 
     <Accordion>
       <Card>
-        <Accordion.Toggle as={Card.Header} eventKey="0">
-          <div className={styles.DescriptionHeader}>
-            Description 
-          <span class="material-symbols-outlined">
-            top_panel_open
-            </span>
-          </div>      
-        </Accordion.Toggle>
+
+       <Accordion.Toggle as={Card.Header} eventKey="0">
+        <div className={styles.DescriptionHeader} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
+            <Link to={`/albums/${id}`}>
+              <span class="material-symbols-outlined">rate_review</span>   
+              {reviews_count}
+          </Link>
+
+          <span class="material-symbols-outlined">star</span>
+
+            {/* Existing Icon */}
+            <span class="material-symbols-outlined">top_panel_open</span>
+          </div>
+        </div>
+      </Accordion.Toggle>
+
         <Accordion.Collapse eventKey="0">
           <Card.Body> 
             <div className={styles.Description}>
@@ -75,17 +84,6 @@ return (
       </Card>
 
     </Accordion>
-   
-    <Card.Footer>
-      <div className={styles.PostBar}>
-        <Link to={`/albums/${id}`}>
-          <span class="material-symbols-outlined">rate_review</span>   
-          {reviews_count}
-        </Link>
-       
-        <span class="material-symbols-outlined">album</span>
-      </div>
-    </Card.Footer>
 
   </Card>
 ); 
