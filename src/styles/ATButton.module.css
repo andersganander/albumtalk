@@ -1,0 +1,44 @@
+
+  .Button {
+    border: none;
+    font-size: 0.8rem;
+    background-color: rgb(164, 45, 45);
+    color: white;
+    /*border-radius: 100px;*/
+    padding: 4px 10px;
+    min-width: 75px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  
+  .Button:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: rgb(164, 45, 45);
+  }
+  
+ 
+  
+  .Button:hover:active {
+    background-color: whitesmoke !important;
+    color: rgb(164, 45, 45);
+    border-color: rgb(164, 45, 45) !important; 
+  }
+  
+  .Button:active {
+    background-color: whitesmoke !important;
+    color: rgb(164, 45, 45);
+    border-color: rgb(164, 45, 45) !important;
+  }
+  
+  .Button:focus {
+    background-color: whitesmoke;
+    color: rgb(164, 45, 45);
+    border-color: rgb(164, 45, 45) !important;
+  }
+  
+  .Wide {
+    padding: 10px 50px;
+    width: 100%;
+  }
+  
