@@ -27,11 +27,12 @@ const Album = (props) => {
 
 return (
   <Card className={styles.Album}>
-    <Card.Body>
+    <Card.Body className={styles.AlbumTitleDetails}>
       <Card.Title>
         <div className={styles.Title}>
           {title}
         </div>
+        <div>{release_year}</div>
        
       </Card.Title>
     </Card.Body>
@@ -39,15 +40,9 @@ return (
     <Card.Body>
       <Media className={styles.CoverDetails}>
         <Link to={`/albums/${id}`}>
-          <img src={image_url} height={250} />
+          <img src={image_url} height={350} />
         </Link>
-        <div className={styles.Details}>
-          <div className={styles.DetailRow}>{release_year} </div>
-          <div className={styles.DetailRow}>{label} </div>
-          <div className={styles.DetailRow}>{genre} </div>
-          <div className={styles.DetailRow}>{style}</div>
-          <div className={styles.DetailRow}>{album_format}</div>
-        </div>
+       
       </Media>
     </Card.Body>
 

@@ -30,14 +30,23 @@
     word-spacing: -5px;
   }
 
+  .AlbumTitleDetails {
+    /*padding-top: 0px;*/
+    padding-bottom: 0px;
+
+  }
+
   .CoverDetails {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-top: 0px;
+    padding-bottom: 20px;
 
   }
 
   .Details {
+
     display: flex;
     flex-direction: column;
 
