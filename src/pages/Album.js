@@ -57,15 +57,15 @@ return (
        <Accordion.Toggle as={Card.Header} eventKey="0">
         <div className={styles.DescriptionHeader} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
-            <Link to={`/albums/${id}`}>
+            <Link to={`/albums/${id}`} title="Reviews">
               <span class="material-symbols-outlined">rate_review</span>   
               {reviews_count}
           </Link>
 
-          <span class="material-symbols-outlined">star</span>
+          <span class="material-symbols-outlined" title="Mark as favorite">star</span>
 
             {/* Existing Icon */}
-            <span class="material-symbols-outlined">top_panel_open</span>
+            <span class="material-symbols-outlined" title="Album description">top_panel_open</span>
           </div>
         </div>
       </Accordion.Toggle>

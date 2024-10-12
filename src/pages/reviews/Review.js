@@ -96,7 +96,7 @@ const Review = (props, albumtitle) => {
               />
             </span>
             <span>
-              <Link to={`/reviews/${id}`}>
+              <Link to={`/reviews/${id}`} title="Comments">
                 <span class="material-symbols-outlined">chat</span>
             </Link>
             {comments_count}
