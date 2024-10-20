@@ -66,16 +66,24 @@
   /* .Post figure,
   h5 {
     margin: 0 0;
-  }
+  } */
   
-  .Heart {
-    color: #f85032;
+  .Star {
+    color: rgb(164, 45, 45);
   }
-  
-  .Heart:hover {
-    color: #2142b2;
-  }
-  
-  .HeartOutline:hover {
+
+ /* .Heart {
     color: #f85032;
   } */
+
+  .StarOutline {
+    color: rgb(177, 162, 162);
+  }
+  
+  .Star:hover {
+    color: rgb(177, 162, 162);
+  }
+
+  .StarOutline:hover {
+    color: rgb(164, 45, 45);
+  } 

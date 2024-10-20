@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "../styles/Album.module.css";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { Accordion, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { axiosRes } from "../api/axiosDefaults";
 //import Avatar from "../../components/Avatar";
 
 const Album = (props) => {
@@ -19,11 +21,47 @@ const Album = (props) => {
     title,
     wikipedia_id,
     reviews_count,
+    favorite_count,
+    favorite_id,
+    setAlbums,
   } = props;
 
-// Lägg till reviews_count här och i serializern
+  const currentUser = useCurrentUser();
+  //const is_owner = currentUser?.username === owner;
+  //const history = useHistory();
 
-// KAnske byta ut mot accordion för att dölja description
+  const handleFavorite = async () => {
+    try {
+      const { data } = await axiosRes.post("/favorites/", { album: id });
+      setAlbums((prevAlbums) => ({
+        ...prevAlbums,
+        results: prevAlbums.results.map((album) => {
+          return album.id === id
+            ? { ...album, favorite_count: album.favorite_count + 1, favorite_id: data.id }
+            : album;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleUnfavorite = async () => {
+    try {
+      await axiosRes.delete(`/favorites/${favorite_id}/`);
+      setAlbums((prevAlbums) => ({
+        ...prevAlbums,
+        results: prevAlbums.results.map((album) => {
+          return album.id === id
+            ? { ...album, favorite_count: album.favorite_count - 1, favorite_id: null }
+            : album;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
 return (
   <Card className={styles.Album}>
@@ -57,10 +95,31 @@ return (
               {reviews_count}
           </Link>
 
-          <span class="material-symbols-outlined" title="Mark as favorite">star</span>
+           {/* <span class="material-symbols-outlined" title="Mark as favorite">star</span> */}
 
-            {/* Existing Icon */}
+           {/* NEW CODE START */}
+           
+           { favorite_id ? (
+              <span onClick={handleUnfavorite}>
+                <i className={`fas fa-star ${styles.Star}`} />
+              </span>
+            ) : currentUser ? (
+              <span onClick={handleFavorite}>
+                <i className={`far fa-star ${styles.StarOutline}`} />
+              </span>
+            ) : (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in to add albums to your favorite list!</Tooltip>}
+              >
+                <i className="far fa-star" />
+              </OverlayTrigger>
+            )}
+
+          {/* NEW CODE END */}
+
             <span class="material-symbols-outlined" title="Album description">top_panel_open</span>
+            
           </div>
         </div>
       </Accordion.Toggle>
