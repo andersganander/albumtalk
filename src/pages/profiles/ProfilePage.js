@@ -25,6 +25,7 @@ import Review from "../reviews/Review";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import FavoriteAlbums from "../FavoriteAlbums";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -114,6 +115,7 @@ function ProfilePage() {
             ))}
         </Col>
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
+
       </Row>
     </>
   );
@@ -157,8 +159,8 @@ function ProfilePage() {
           )}
         </Container>
       </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        
+      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+        <FavoriteAlbums />
       </Col>
     </Row>
   );
