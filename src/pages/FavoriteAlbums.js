@@ -67,9 +67,9 @@ const FavoriteAlbums = ({ mobile }) => {
             ))
           )}
         </>
-      ) : (
-        <Asset spinner />
-      )}
+      ) : 
+        <p>NO FAVORITE ALBUMS YET</p>
+      }
     </Container>
   );
 };
