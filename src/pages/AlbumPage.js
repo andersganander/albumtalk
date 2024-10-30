@@ -9,6 +9,7 @@ import styles from "../styles/AlbumPage.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
 import Album from "./Album";
+import MostRatedAlbums from "./MostRatedAlbums";
 import Review from "./reviews/Review";
 import { useHistory } from "react-router";
 
@@ -50,7 +51,7 @@ function AlbumPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular albums for mobile</p>
+        <MostRatedAlbums mobile/>
         <Album {...album.results[0]} setAlbums={setAlbum} albumPage />
         <Container className={appStyles.Content}>
         {currentUser ? (
@@ -83,7 +84,7 @@ function AlbumPage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Popular albums for desktop
+        <MostRatedAlbums />
       </Col>
     </Row>
   );
