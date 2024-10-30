@@ -123,8 +123,9 @@ function ProfilePage() {
   const mainProfileReviews = (
     <>
       <hr />
-      <p className="text-center">{profile?.owner}'s reviews</p>
+      <FavoriteAlbums mobile/>
       <hr />
+      <p className="text-center">{profile?.owner}'s reviews</p>
       {profileReviews.results.length ? (
         <InfiniteScroll
           children={profileReviews.results.map((review) => (

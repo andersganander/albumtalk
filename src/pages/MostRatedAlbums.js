@@ -4,6 +4,7 @@ import { axiosReq } from "../api/axiosDefaults";
 import appStyles from "../App.module.css";
 import Asset from "../components/Asset";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { Link } from "react-router-dom";
 
 const MostRatedAlbums = ({ mobile }) => {
   const [albumData, setAlbumData] = useState({
@@ -39,16 +40,23 @@ const MostRatedAlbums = ({ mobile }) => {
     >
       {mostRated.results.length ? (
         <>
-          <p>Most rated aalbums.</p>
+          <p>Most reviewed albums.</p>
           {mobile ? (
-            <div className="d-flex justify-content-around">
+            <div>
               {mostRated.results.slice(0, 4).map((album) => (
-                <p key={album.id}>{album.title}</p>
+                <Link to={`/albums/${album.id}`}>
+                <img src={album.image_url} height={75} />
+              </Link>
               ))}
             </div>
           ) : (
             mostRated.results.map((album) => (
-              <p key={album.id}>{album.title}</p>
+              <div>
+                <Link to={`/albums/${album.id}`}>
+                  <img src={album.image_url} height={100} />
+                </Link>
+                <br />
+            </div>
             ))
           )}
         </>

@@ -52,7 +52,7 @@ const FavoriteAlbums = ({ mobile }) => {
             <div>
               {favorites.results.slice(0, 4).map((album) => (
                 <Link to={`/albums/${album.id}`}>
-                <img src={album.image_url} height={100} />
+                <img src={album.image_url} height={75} />
               </Link>
               ))}
             </div>
