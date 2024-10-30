@@ -13,6 +13,8 @@ import SignInForm from "./pages/auth/SignInForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import ReviewPage from "./pages/reviews/ReviewPage";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 
 // import { createContext, useEffect, useState } from "react";
 // import axios from "axios";
@@ -33,6 +35,16 @@ function App() {
           <Route exact path="/albums/:id" render={() => <AlbumPage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/reviews/:id" render={() => <ReviewPage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
+          />
           <Route
             exact
             path="/profiles/:id/edit"
