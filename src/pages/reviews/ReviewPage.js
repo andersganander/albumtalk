@@ -13,6 +13,7 @@ import { useHistory } from "react-router";
 
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import MostRatedAlbums from "../MostRatedAlbums";
 
 function ReviewPage() {
   
@@ -50,7 +51,7 @@ function ReviewPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular albums for mobile</p>
+        <MostRatedAlbums mobile />
         <Review {...review.results[0]} setReviews={setReview} reviewPage />
         <Container className={appStyles.Content}>
             {currentUser ? (
@@ -76,7 +77,7 @@ function ReviewPage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Popular albums for desktop
+        <MostRatedAlbums />
       </Col>
     </Row>
   );
