@@ -62,7 +62,7 @@ const Review = (props, albumtitle) => {
           <Avatar src={profile_image} />
         </Link>
         <Media.Body className="align-self-center ml-2">
-          <span className={styles.Owner}>
+          <span className={styles.Title}>
             <a href={`/albums/${album}`}>{album_title}</a>
             </span><br />
           <span className={styles.Owner}>{owner}</span>

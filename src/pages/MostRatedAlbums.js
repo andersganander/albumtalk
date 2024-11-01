@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../api/axiosDefaults";
 import appStyles from "../App.module.css";
+import listStyles from "../styles/List.module.css";
 import Asset from "../components/Asset";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
@@ -40,7 +41,7 @@ const MostRatedAlbums = ({ mobile }) => {
     >
       {mostRated.results.length ? (
         <>
-          <p>Most reviewed albums.</p>
+          <p className={listStyles.listHeader}> Most reviewed albums</p>
           {mobile ? (
             <div>
               {mostRated.results.slice(0, 4).map((album) => (
@@ -51,10 +52,11 @@ const MostRatedAlbums = ({ mobile }) => {
             </div>
           ) : (
             mostRated.results.map((album) => (
-              <div>
+              <div className={listStyles.listAlbum}>
                 <Link to={`/albums/${album.id}`}>
                   <img src={album.image_url} height={100} />
                 </Link>
+                <p className={listStyles.listHeaderSmall}>{album.title}</p>
                 <br />
             </div>
             ))

@@ -70,9 +70,9 @@ function ReviewPage() {
                   <Comment key={comment.id} {...comment} />
                 ))
               ) : currentUser ? (
-                <span>No comments yet, be the first to comment!</span>
+                <span><b>Be the first to comment on this review.</b></span>
               ) : (
-                <span>No comments... yet</span>
+                <span><b>No comments... yet</b></span>
               )}
         </Container>
       </Col>

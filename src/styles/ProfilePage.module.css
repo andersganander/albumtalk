@@ -4,11 +4,6 @@
     width: 120px;
     margin: 4px;
   }
-
-  .verticalList {
-    
-    margin: 10px;
-  }
   
   @media screen and (max-width: 991px) {
     .ProfileImage {

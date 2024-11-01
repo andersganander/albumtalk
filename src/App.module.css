@@ -32,7 +32,8 @@
   }
   
   a {
-    color: #555555;
+    /*color: #555555;*/
+    color:rgb(164, 45, 45);
     transition: color ease-in-out 0.3s;
   }
   

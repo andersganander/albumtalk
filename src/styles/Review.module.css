@@ -1,14 +1,21 @@
 .Owner {
     font-weight: bold;
-    /*color: #2142b2;*/
-    color:rgb(164, 45, 45);
     margin-right: 8px;
   }
+
+  .Date {
+    /*color: #060606;*/
+  }
   
-.Date {
-  font-weight: lighter;
-  color: #060606;
+.Title {
+  font-family: 'Bricolage Grotesque';
+  font-weight: bold;
+  font-size: 14px;
+  /*letter-spacing: 0.2em;*/
+  text-transform: uppercase;
+  /*color: #2142b2;*/
 }
+
 
 .Content {
   text-align: left;
@@ -22,7 +29,8 @@
 }
 
 .Background {
-  background-color:#d7091d66;
+  background-color:#f29fa866;
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 10px;
 }

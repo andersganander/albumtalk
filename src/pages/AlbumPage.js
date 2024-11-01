@@ -5,7 +5,8 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import appStyles from "../App.module.css";
-import styles from "../styles/AlbumPage.module.css";
+//import styles from "../styles/AlbumPage.module.css";
+import styles from "../styles/ATButton.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../api/axiosDefaults";
 import Album from "./Album";
@@ -74,9 +75,9 @@ function AlbumPage() {
             />
           ))
         ) : currentUser ? (
-          <span>No reviews yet, be the first to comment!</span>
+          <span><b>Be the first to review this album</b></span>
         ) : (
-          <span>No reviews... yet</span>
+          <span><b>No reviews... yet</b></span>
         )}
         <span>
           <button className={styles.Button} onClick={() => history.goBack()}>BACK</button>

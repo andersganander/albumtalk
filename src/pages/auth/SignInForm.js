@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
@@ -12,7 +12,7 @@ import Container from "react-bootstrap/Container";
 import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/ATButton.module.css";
 import appStyles from "../../App.module.css";
 import img1 from "../../assets/AS_eyes_2.png"
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
@@ -119,9 +119,9 @@ function SignInForm() {
               </Alert>
             ))}
             <div className="d-flex justify-content-end">
-              <Button variant="outline-secondary" type="submit">
+              <button className={btnStyles.Button} type="submit">
                 SIGNIN
-              </Button>
+              </button>
             </div>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">

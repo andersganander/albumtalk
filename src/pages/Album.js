@@ -129,10 +129,10 @@ return (
             <div className={styles.Description}>
             {description} 
             </div>
-           
-            <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
-            <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank'>Discogs</a>
-            
+            <div className={styles.ExtLinks}>
+              <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
+              <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank'>Discogs</a>
+            </div>
           </Card.Body>
         </Accordion.Collapse>
       </Card>
