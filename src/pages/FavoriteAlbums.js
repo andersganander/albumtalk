@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { axiosReq } from "../api/axiosDefaults";
 import appStyles from "../App.module.css";
 import styles from "../styles/ProfilePage.module.css";
+import listStyles from "../styles/List.module.css";
 import Asset from "../components/Asset";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { Link } from "react-router-dom";
@@ -47,7 +48,7 @@ const FavoriteAlbums = ({ mobile }) => {
     >
       {favorites.results.length ? (
         <>
-          <p>Favorite albums</p>
+         <p className={listStyles.listHeader}> Favorite albums</p>
           {mobile ? (
             <div>
               {favorites.results.slice(0, 4).map((album) => (
@@ -58,10 +59,11 @@ const FavoriteAlbums = ({ mobile }) => {
             </div>
           ) : (
             favorites.results.map((album) => (
-              <div className = {styles.verticalList}>
+              <div className={listStyles.listAlbum}>
                 <Link to={`/albums/${album.id}`}>
                   <img src={album.image_url} height={100} />
                 </Link>
+                <p className={listStyles.listHeaderSmall}>{album.title}</p>
                 <br />
             </div>
             ))

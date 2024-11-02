@@ -42,8 +42,13 @@
   }
   
   a:hover i {
-    color: #2142b2;
+    color:rgb(164, 45, 45);
+    /*color: #2142b2;*/
     transition: color ease-in-out 0.3s;
+  }
+
+  a:focus {
+    background-color:whitesmoke!important;
   }
   
   input[type="file"] {
@@ -60,7 +65,8 @@
   i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: #2142b2;
+    /*color: #2142b2;*/
+    color:rgb(164, 45, 45) !important;
   }
   
   figure {

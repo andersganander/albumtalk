@@ -11,7 +11,8 @@ import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/ATButton.module.css";
+import styles from "../../styles/Profile.module.css";
 import appStyles from "../../App.module.css";
 
 const UserPasswordForm = () => {
@@ -58,7 +59,7 @@ const UserPasswordForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>New password</Form.Label>
+            <h5 className={styles.Header}>Changepassword</h5>
               <Form.Control
                 placeholder="new password"
                 type="password"
@@ -73,7 +74,7 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Confirm password</Form.Label>
+            <h6 className={styles.Header}>confirmnewpassword</h6>
               <Form.Control
                 placeholder="confirm new password"
                 type="password"
@@ -91,13 +92,13 @@ const UserPasswordForm = () => {
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}
             >
-              cancel
+              CAANCEL
             </Button>
             <Button
               type="submit"
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
             >
-              save
+              SAVE
             </Button>
           </Form>
         </Container>

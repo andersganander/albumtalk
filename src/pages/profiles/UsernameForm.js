@@ -14,7 +14,8 @@ import {
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/ATButton.module.css";
+import styles from "../../styles/Profile.module.css";
 import appStyles from "../../App.module.css";
 
 const UsernameForm = () => {
@@ -58,7 +59,7 @@ const UsernameForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
-              <Form.Label>Change username</Form.Label>
+              <h5 className={styles.Header}>Changeusername</h5>
               <Form.Control
                 placeholder="username"
                 type="text"
@@ -75,13 +76,13 @@ const UsernameForm = () => {
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               onClick={() => history.goBack()}
             >
-              cancel
+              CANCEL
             </Button>
             <Button
               className={`${btnStyles.Button} ${btnStyles.Blue}`}
               type="submit"
             >
-              save
+              SAVE
             </Button>
           </Form>
         </Container>

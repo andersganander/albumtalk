@@ -15,7 +15,8 @@ import {
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/ATButton.module.css";
+import styles from "../../styles/Profile.module.css";
 import appStyles from "../../App.module.css";
 
 const ProfileEditForm = () => {
@@ -87,7 +88,7 @@ const ProfileEditForm = () => {
     <>
       
       <Form.Group>
-        <Form.Label>Bio</Form.Label>
+        <h5 className={styles.Header}>Bio</h5>
         <Form.Control
           as="textarea"
           value={content}
@@ -102,15 +103,12 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
-      </Button>
+      <button className={btnStyles.Button} type="submit">
+        CANCEL
+      </button>
+      <button className={btnStyles.Button} type="submit">
+        SAVE
+      </button>
     </>
   );
 
@@ -135,7 +133,7 @@ const ProfileEditForm = () => {
                   className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
                   htmlFor="image-upload"
                 >
-                  Change the image
+                  CHANGETHEIMAGE
                 </Form.Label>
               </div>
               <Form.File

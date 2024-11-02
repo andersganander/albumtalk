@@ -4,6 +4,30 @@
     width: 120px;
     margin: 4px;
   }
+
+  .ProfileName {
+    font-family: 'Bricolage Grotesque';
+    color:rgb(164, 45, 45) ;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .StatText {
+    font-family: 'Bricolage Grotesque';
+    color:rgb(164, 45, 45) ;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .Content {
+    background-color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+  }
   
   @media screen and (max-width: 991px) {
     .ProfileImage {

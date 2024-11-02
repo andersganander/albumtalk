@@ -79,19 +79,19 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
-          <h3 className="m-2">{profile?.owner}</h3>
+          <h3 className={styles.ProfileName}>{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
-              <div>{profile?.reviews_count}</div>
-              <div>reviews</div>
+              <div className={styles.StatText} >{profile?.reviews_count}</div>
+              <div className={styles.StatText}>reviews</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>followers</div>
+              <div className={styles.StatText}>{profile?.followers_count}</div>
+              <div className={styles.StatText}>followers</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>following</div>
+              <div className={styles.StatText}>{profile?.following_count}</div>
+              <div className={styles.StatText}>following</div>
             </Col>
           </Row>
         </Col>
@@ -114,7 +114,11 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        {profile?.content && <Col className="p-3">
+            <div className={styles.Content}>
+              {profile.content}
+            </div>
+          </Col>}
 
       </Row>
     </>
@@ -125,7 +129,7 @@ function ProfilePage() {
       <hr />
       <FavoriteAlbums mobile/>
       <hr />
-      <p className="text-center">{profile?.owner}'s reviews</p>
+      <h5 className={styles.ProfileName}>{profile?.owner}'s reviews</h5>
       {profileReviews.results.length ? (
         <InfiniteScroll
           children={profileReviews.results.map((review) => (
