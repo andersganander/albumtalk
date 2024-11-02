@@ -14,7 +14,7 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/ATButton.module.css";
 import appStyles from "../../App.module.css";
-import img1 from "../../assets/AS_eyes_2.png"
+import img1 from "../../assets/AS_eyes_3.png"
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
@@ -75,13 +75,13 @@ function SignInForm() {
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={9}>
 
-      <Container className={`mt-3 ${appStyles.Content}`}>
-        <Image
-            className={`${appStyles.FillerImage}`}
-            src={ img1 }
-          />
+      <Container className={`mt-3 ${styles.Container}`}>
+          <Image
+              className={`${appStyles.Image}`}
+              src={ img1 }
+            />
         </Container>
-
+        
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign in</h1>
           <Form onSubmit={handleSubmit}>

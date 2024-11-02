@@ -15,7 +15,7 @@ import {
   Alert,
 } from "react-bootstrap";
 import axios from "axios";
-import img1 from "../../assets/AS_eyes_2.png"
+import img1 from "../../assets/AS_eyes_3.png"
 import img2 from "../../assets/AS_mouth.png"
 
 
@@ -52,9 +52,9 @@ const SignUpForm = () => {
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={9}>
 
-      <Container className={`mt-3 ${appStyles.Content}`}>
+      <Container className={`mt-3 ${styles.Container}`}>
         <Image
-            className={`${appStyles.FillerImage}`}
+            className={`${appStyles.Image}`}
             src={ img1 }
           />
         </Container>
