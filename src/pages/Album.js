@@ -90,10 +90,18 @@ return (
        <Accordion.Toggle as={Card.Header} eventKey="0">
         <div className={styles.DescriptionHeader} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
-            <Link to={`/albums/${id}`} title="Reviews">
+
+          <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Click for album reviews!</Tooltip>}
+              >
+                <Link to={`/albums/${id}`} title="Reviews">
               <span class="material-symbols-outlined">rate_review</span>   
               {reviews_count}
           </Link>
+          </OverlayTrigger>
+
+            
 
            {/* <span class="material-symbols-outlined" title="Mark as favorite">star</span> */}
 
@@ -118,7 +126,14 @@ return (
 
           {/* NEW CODE END */}
 
-            <span class="material-symbols-outlined" title="Album description">top_panel_open</span>
+          <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Click for album description!</Tooltip>}
+              >
+                <span class="material-symbols-outlined" title="Album description">top_panel_open</span>
+          </OverlayTrigger>
+            
+            
             
           </div>
         </div>
@@ -130,8 +145,18 @@ return (
             {description} 
             </div>
             <div className={styles.ExtLinks}>
-              <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
-              <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank'>Discogs</a>
+            <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Read more about this album on Wikipedia</Tooltip>}
+              >
+                 <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
+              </OverlayTrigger>
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>View album details, tracklist, and credits on Discogs</Tooltip>}
+              >
+               <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank'>Discogs</a>
+              </OverlayTrigger>
             </div>
           </Card.Body>
         </Accordion.Collapse>

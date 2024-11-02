@@ -1,6 +1,6 @@
 
 import React, {  useState } from "react";
-import { Media } from "react-bootstrap";
+import { Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
@@ -95,12 +95,18 @@ const Review = (props, albumtitle) => {
                 size={30}
               />
             </span>
-            <span>
-              <Link to={`/reviews/${id}`} title="Comments">
-                <span class="material-symbols-outlined">chat</span>
-            </Link>
-            {comments_count}
-            </span>
+            <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Discuss this review!</Tooltip>}
+              >
+               <span>
+                <Link to={`/reviews/${id}`} title="Comments">
+                  <span class="material-symbols-outlined">chat</span>
+                </Link>
+                {comments_count}
+                </span>
+              </OverlayTrigger>
+            
             </div>
             </>
           )}
