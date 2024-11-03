@@ -58,7 +58,7 @@ Images goes here
 | Albums    | Like favorite albums    | #58 |
 | Write review | Write a review |   |
 | Write review | Visual rating |  #50 |
-| View reviews | View album specific reviews |  #31 |
+| View reviews | View album specific reviews |  ([#31][i31]) |
 | View reviews | List reviews |   |
 | View reviews | View a review |   |
 | Edit and delete review | Edit a review |   |
@@ -73,6 +73,7 @@ Images goes here
 | Profile page| View profile page | |
 | Search | Search for reviews and albums |   |
 
+[i31]: https://github.com/andersganander/albumtalk/issues/31
 
 ### Design Choices
 
