@@ -18,3 +18,8 @@
     background-color: whitesmoke;
     color: rgb(164, 45, 45);
   }
+
+  .Message {
+    background-color: lightyellow;
+    font-weight: bold;
+  }

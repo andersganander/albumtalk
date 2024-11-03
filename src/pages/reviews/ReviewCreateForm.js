@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
@@ -6,7 +6,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 import styles from "../../styles/ReviewCreateEditForm.module.css";
 import Avatar from "../../components/Avatar";
-import { axiosRes } from "../../api/axiosDefaults";
+import { axiosRes, axiosReq } from "../../api/axiosDefaults";
 import { Rating } from 'react-simple-star-rating'
 
 function ReviewCreateForm(props) {
@@ -23,6 +23,7 @@ function ReviewCreateForm(props) {
 
     const [rating, setRating] = useState(0)
     const [content, setContent] = useState('')
+    const [hasReviewed, setHasReviewed] = useState(false);
 
      // Optinal callback functions
     const onPointerEnter = () => console.log('Enter')
@@ -36,10 +37,23 @@ function ReviewCreateForm(props) {
 //     });
 //   };
 
+    useEffect(() => {
+      const fetchUserReviews = async () => {
+        setHasReviewed(false); 
+        try {
+          const { data } = await axiosReq.get(`/reviews/?album=${album}&owner__profile=${profile_id}`);
+          if (data.results.length > 0) {
+            setHasReviewed(true);
+          }
+        } catch (err) {
+          console.log("Error fetching user reviews: ", err);
+        }
+      };
+      fetchUserReviews();
+    }, [profile_id, album]);
+
     const handleRating = (rate) => {
       setRating(rate)
-
-      // other logic
     }
 
 
@@ -72,6 +86,10 @@ function ReviewCreateForm(props) {
       console.log('ERR' + err);
     }
   };
+
+  if (hasReviewed) {
+    return <p className={styles.Message}>You have already reviewed this album.</p>;
+  }
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
