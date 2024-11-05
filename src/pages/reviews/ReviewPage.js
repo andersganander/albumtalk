@@ -67,7 +67,10 @@ function ReviewPage() {
               ) : null}
               {comments.results.length ? (
                 comments.results.map((comment) => (
-                  <Comment key={comment.id} {...comment} />
+                  <Comment key={comment.id} {...comment} 
+                  setReview={setReview} 
+                  setComments={setComments}
+                  />
                 ))
               ) : currentUser ? (
                 <span><b>Be the first to comment on this review.</b></span>
