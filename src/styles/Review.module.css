@@ -34,3 +34,8 @@
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+.Message {
+  background-color: lightyellow;
+  font-weight: bold;
+}
