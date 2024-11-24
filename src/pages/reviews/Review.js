@@ -19,19 +19,14 @@ const Review = (props, albumtitle) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-  //var is_not_editable = false;
 
   const [star_rating, setStarRating] = useState(0)
   
-
-
-  // Catch Rating value
   const handleRating = (rate) => {
     setStarRating(rate)
 
-    // other logic
   }
-  // Optinal callback functions
+  
   const onPointerEnter = () => console.log('Enter')
   const onPointerLeave = () => console.log('Leave')
   const onPointerMove = (value, index) => console.log(value, index)
@@ -57,8 +52,7 @@ const Review = (props, albumtitle) => {
         results: prevReviews.results.filter((review) => review.id !== id),
       }));
 
-        //history.goBack();
-        //history.push("/reviews");
+        window.location.reload();
 
     } catch (err) {}
   };
