@@ -30,7 +30,7 @@ function ReviewEditForm(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axiosRes.put(`/reviews/${id}/`, {
+      await axiosRes.patch(`/reviews/${id}/`, {
         content: formContent.trim(),
         rating: formRating,
       });
