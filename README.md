@@ -274,7 +274,7 @@ Additionally, specific scripts were defined for building, testing, and starting 
 ### Manual testing
 
 found here:
-[Manual testing](testing.md)
+[Manual testing](./TESTING.md)
 
 ### Performance and Validation
 
