@@ -120,8 +120,12 @@ The design takes heavy inspiration from the minimalist, avant-garde aesthetic of
 #### Colors
 - Primary Colors:
   - White for backgrounds to evoke the album's clean and modern feel.
+  - Light red for backgrounds for reviews
+  - Light blue for backgrounds for comments
   - Black for bold contrasts in typography.
   - Deep Red accents inspired by the subtle use of red tones in the album's design.
+
+  The choice of the different backgropund colors for different sections is aimed at creating clear visual separation and enhancing the user’s ability to navigate and understand the content.
 
 
 #### Typography
@@ -204,9 +208,13 @@ Icons are frequently used on the website. They are used partly on the album page
 
 <img src="src/assets/doc_images/features/ProfilePage_password.png" width="400" alt="" >
 
-### Reviews page (THEREVIEWS) ADD IMAGE
+### Reviews page (THEREVIEWS)
 
-<img src="src/assets/doc_images/features/" width="400" alt="" >
+- All reviews are displayed in a scrollable list
+- A search field at the top makes it easy to search for an albums reviews
+- For logged in users there will be a dropdown menu with options for deleting and edit their own reviews
+
+<img src="src/assets/doc_images/features/ReviewsPage.png" width="400" alt="" >
 
 
 ### Add comment
