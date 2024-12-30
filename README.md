@@ -43,19 +43,25 @@ AlbumTalk (David Bowie edition) is a pilot to test the concept on a smaller scal
   - [Future Features](#future-features)
   - [Reusability](#reusability)
     - [Components](#components)
-    - [Packages and Tools](#packages-and-tools)
+      - [Asset component](#asset-component)
+      - [Avatar component](#avatar-component)
+      - [Moredropdown component](#moredropdown-component)
+      - [Navbar component](#navbar-component)
+      - [React simple star rating](#react-simple-star-rating)
+      - [React Infinite Scroll Component](#react-infinite-scroll-component)
+    - [Frameworks and libraries](#frameworks-and-libraries)
   - [Testing](#testing)
-    - [Manual testing](#manual-testing)
-    - [Performance and Validation](#performance-and-validation)
-  - [Known Bugs](#known-bugs)
-  - [Deployment](#deployment)
+    - [Manual testing and Validation](#manual-testing-and-validation)
+  - [Development and Deployment](#development-and-deployment)
+    - [Forking and clone the GitHub Repository](#forking-and-clone-the-github-repository)
+      - [Forking a Repository](#forking-a-repository)
+      - [Cloning Your Forked Repository](#cloning-your-forked-repository)
+      - [Installing and starting the application locally](#installing-and-starting-the-application-locally)
     - [Heroku](#heroku)
       - [Initial Setup](#initial-setup)
       - [Preparing the Application](#preparing-the-application)
-      - [Deployment](#deployment-1)
+      - [Deployment](#deployment)
       - [Final Steps](#final-steps)
-    - [Forking the GitHub Repository](#forking-the-github-repository)
-    - [Making a Local Clone](#making-a-local-clone)
   - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
@@ -63,7 +69,7 @@ AlbumTalk (David Bowie edition) is a pilot to test the concept on a smaller scal
 
 ## Backend API
 
-The repository for the backend of the application is documented [here](https://github.com/andersganander/AlbumTalk_API)
+The backend api that is used by AlbumTalk is documented [here](https://github.com/andersganander/AlbumTalk_API)
 
 ## UX
 
@@ -309,55 +315,76 @@ Proposals for other potential improvements are:
 
 ### Components
 
-### Packages and Tools
+#### Asset component
 
-- **React**
+Displays a media asset, such as images, spinner animations, and messages. Used for displaying a spinner animation when data is loading.
 
-  - A JavaScript library for building dynamic and interactive user interfaces. Ideal for single-page applications.
-- **Axios**
+#### Avatar component
 
-  - A promise-based HTTP client for making HTTP requests, used for fetching or saving data from/to a server.
-- **Bootstrap & React-Bootstrap**
+This component displays an avatar image along with optional text content.
 
-  - Bootstrap provides responsive design elements and layouts. React-Bootstrap adapts these into React components for consistent styling.
-- **JWT-Decode**
+#### Moredropdown component
 
-  - A library for decoding JSON Web Tokens. Useful for interpreting the token's data on the client side.
-- **React Router DOM**
+Provides a dropdown menu for actions like editing and deleting items.
 
-  - Manages navigation in React applications, enabling dynamic routing without page reloads.
-- **React Infinite Scroll Component**
+#### Navbar component
 
-  - Implements infinite scrolling, loading content as the user scrolls down, enhancing user experience.
-- **Testing Libraries (Jest, React Testing Library)**
+This is a React component called NavBar that implements a navigation bar for the application. It uses React Bootstrap components and custom styling.
 
-  - Jest is a simple testing framework, and React Testing Library provides utility functions for testing React components.
-- **Mock Service Worker (MSW)**
+#### React simple star rating
 
-  - Mocks HTTP requests in development and testing environments. Ideal for testing network request scenarios.
-- **Scripts for Building, Testing, and Starting**
+A react component for adding star rating. Used in review for visual rating.
 
-  - Specific scripts are defined for building, testing, and starting the application, particularly with Heroku deployment in mind.
-- **Node.js and npm Versions**
+#### React Infinite Scroll Component
 
-  - The project specifies Node.js and npm versions to ensure a consistent environment setup.
+Implements infinite scrolling, loading content as the user scrolls down, enhancing user experience.
 
-Additionally, specific scripts were defined for building, testing, and starting the application, particularly with Heroku deployment in mind. The project also specifies Node.js and npm versions for consistent environment setup.
+### Frameworks and libraries
+
+- React 18.3.1: JavaScript library for building user interfaces.
+- React Bootstrap 1.6.3:  React component library that provides Bootstrap components built with React.
+- React Router DOM 5.3.0: Routing library for React applications.
+- Axios 1.7.2: JavaScript library used for making HTTP requests from both the browser and Node.js environment.
+- react-infinite-scroll-component 6.1.0: Described in the Components section.
+- react-simple-star-rating 5.1.7: Described in the Components section.
 
 ## Testing
 
-### Manual testing
+### Manual testing and Validation
 
-found here:
+Testng, validation and bugs is described in the testing documentation.
 [Manual testing](./TESTING.md)
 
-### Performance and Validation
+## Development and Deployment
 
-[Perfomance and Validation](testing.md#performance-and-validation)
+### Forking and clone the GitHub Repository
 
-## Known Bugs
+#### Forking a Repository
+- Go to the repository you want to fork on GitHub.com.
+- Click the "Fork" button in the top-right corner of the repository page.
+- Choose where you want to fork the repository (usually your personal account).
+- Wait for the fork to be created on GitHub.
 
-## Deployment
+#### Cloning Your Forked Repository
+- On your local machine, open a terminal or command prompt.
+- Navigate to the directory where you want to clone the repository.
+- Run the following command, replacing USERNAME with your GitHub username:
+
+```
+git clone https://github.com/USERNAME/repository-name.git
+```
+
+- Press Enter to clone the repository.
+
+#### Installing and starting the application locally
+
+Install Dependencies:
+
+`npm install`
+
+Run Application:
+
+`npm start` 
 
 ### Heroku
 
@@ -388,23 +415,6 @@ This project is deployed on Heroku, a cloud platform service that enables easy d
 
 For more detailed instructions and troubleshooting, visit the official [Heroku Dev Center](https://devcenter.heroku.com/).
 
-### Forking the GitHub Repository
-
-<hr>
-Forking the GitHub repository allows you to make a copy of the original project on your own GitHub account, enabling you to make changes without affecting the original. Here's how to do it:
-
-1. **Go to the Repository**: Navigate to the original repository on GitHub.
-2. **Fork the Repository**: Click the 'Fork' button, located at the top right of the repository page. This creates a copy of the repository in your GitHub account.
-3. **Clone Your Fork**: Once forked, you can clone your fork to your local machine for further development.
-
-### Making a Local Clone
-
-Cloning a GitHub repository creates a local copy on your machine, allowing you to sync between the two locations. Here are the steps:
-
-1. **Clone the Repository**: On the GitHub repository page, click the 'Code' button and copy the URL under 'Clone with HTTPS'.
-2. **Open Terminal**: Open your terminal and navigate to the directory where you want the clone to be created.
-3. **Clone Command**: Type `git clone`, and then paste the URL you copied in Step 1. Press Enter to create your local clone.
-
 ## Credits
 
 The following sources and references were resorted for the creation of this website:<br>
@@ -428,7 +438,7 @@ This project has greatly benefited from the educational resources and example pr
 ## Acknowledgements:
 
 - My mentor
-- The Swedish community on Slack
+- The Swedish community on Slack, always ready and willing to help and support.
 
  [i5]: https://github.com/andersganander/albumtalk/issues/5
 
