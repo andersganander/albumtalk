@@ -288,6 +288,7 @@ Icons are frequently used on the website. They are used partly on the album page
 ### Comment page
 
 - When the user is logged in, a dropdown menu is shown for the users' comments where the user can choose to edit or delete the comment.
+  
   <img src="src/assets/doc_images/features/Comment_dropdown.png" width="400" alt="" >
 
 ## Future Features
