@@ -396,9 +396,9 @@ The api is being hosted and deployed on Heroku:
   - Authenticate and search for your repository.
   - Click Connect to link the repository.
 - Prepare the application for deploy
-  - In package.json file, in the “scripts” section, add the following prebuild command:
+  - In package.json file, in the “scripts” section, add the following prebuild command: <br>
   `"heroku-prebuild": "npm install -g serve",`
-  - Add a Procfile at the root of the project with the following web command:
+  - Add a Procfile at the root of the project with the following web command: <br>
   `web: serve -s build`
 - Deploy the application
   - Automatic deployments
