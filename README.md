@@ -58,10 +58,6 @@ AlbumTalk (David Bowie edition) is a pilot to test the concept on a smaller scal
       - [Cloning Your Forked Repository](#cloning-your-forked-repository)
       - [Installing and starting the application locally](#installing-and-starting-the-application-locally)
     - [Heroku](#heroku)
-      - [Initial Setup](#initial-setup)
-      - [Preparing the Application](#preparing-the-application)
-      - [Deployment](#deployment)
-      - [Final Steps](#final-steps)
   - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
@@ -388,56 +384,54 @@ Run Application:
 
 ### Heroku
 
-This project is deployed on Heroku, a cloud platform service that enables easy deployment and scaling for web applications. The deployment process includes the following steps:
+The api is being hosted and deployed on Heroku:
 
-#### Initial Setup
+- Log in to the Heroku Dahboard
+- Create a New App
+  - Click New > Create New App
+  - Choose a name for your app (e.g., your-app-name) and select a region.
+- Set up GitHub integration
+  - In your app's dashboard, go to the Deploy tab
+  - Under Deployment method, select GitHub
+  - Authenticate and search for your repository.
+  - Click Connect to link the repository.
+- Prepare the application for deploy
+  - In package.json file, in the “scripts” section, add the following prebuild command:
+  `"heroku-prebuild": "npm install -g serve",`
+  - Add a Procfile at the root of the project with the following web command:
+  `web: serve -s build`
+- Deploy the application
+  - Automatic deployments
+    - In the Deploy tab, enable Automatic Deploys if you want Heroku to deploy every time you push changes to the main branch.
+  - Manual deployment
+    - If you prefer, deploy manually by clicking Deploy Branch under Manual Deploy.
+- Test the deployment
+  - Open the application
+    - Click the button that is shown after the deployment or click the button "Open app" in the upper right corner.
+  - Monitor logs
+    - In the More dropdown, select View Logs to troubleshoot any issues.
 
-1. **Create a Heroku Account**: Sign up for a Heroku account at [Heroku's website](https://www.heroku.com/).
-2. **Install Heroku CLI**: Download and install the Heroku Command Line Interface (CLI) to interact with Heroku from your local machine.
-
-#### Preparing the Application
-
-1. **Procfile**: Create a `Procfile` in your project root directory. This file tells Heroku how to run your application.
-2. **Requirements.txt**: Ensure you have a `requirements.txt` file listing all project dependencies.
-3. **Config Vars**: Set up necessary configuration variables in Heroku (like `SECRET_KEY`, database URL, etc.).
-
-#### Deployment
-
-1. **Create a Heroku App**: Use the Heroku CLI to create a new app.
-2. **Add Buildpacks**: If necessary, add the correct buildpacks via the Heroku dashboard or CLI.
-3. **Deploy**: Push your code to Heroku either by connecting your GitHub repository to Heroku or using the Heroku CLI to deploy your application.
-4. **Database Migration (if applicable)**: Run database migrations using the Heroku CLI.
-
-#### Final Steps
-
-1. **Enable the Web Dyno**: Make sure the web dyno is up and running after deployment.
-2. **Open the App**: You can open your application from the Heroku dashboard or using the CLI command `heroku open`.
-
-For more detailed instructions and troubleshooting, visit the official [Heroku Dev Center](https://devcenter.heroku.com/).
+- The live app can be found [here](https://album-talk-68a3b5c7423a.herokuapp.com/).
 
 ## Credits
 
-The following sources and references were resorted for the creation of this website:<br>
-
-- The lessons and tutorials provided by Code Institute, on the final module entitled "Django REST Framework" for the 'Advanced Front-End' specialization<br>
-
 ### Content
 
-This project has greatly benefited from the educational resources and example projects provided by the Code Institute during my bootcamp. The following projects were particularly influential in shaping the development of this application:
+This project has greatly benefited from the educational resources and example projects provided by the Code Institute. The following projects were particularly influential in shaping the development of this application:
 
-- **Django REST Framework Example Project**: This practical example from the Code Institute served as a key reference for building Web APIs using the Django REST framework. It provided a solid foundation and template for implementing best practices in API development with Django and Python.
-- **Moments Project**: Another invaluable resource from the Code Institute, the Moments project demonstrated the creation of a full-stack application with a strong emphasis on user experience aand how to use the API that was developed in the example project. Several aspects of its design and functionality were adapted and integrated into this project.
+- **Django REST Framework Example Project**: This practical example from the Code Institute served as a crucial reference for constructing Web APIs using the Django REST framework. It provided a solid foundation and template for implementing best practices in API development with Django and Python.
+- **Moments Project**: The Moments project, another invaluable resource from the Code Institute, demonstrated the creation of a full-stack application with a strong emphasis on user experience. This project showcased how to utilize the API developed in the earlier example project, highlighting several key aspects of its design and functionality that were adapted and integrated into this project.
+- Some of the reviews and comments were written by ChatGPT.
 
 ### Media
 
-- Stock images for profile pictures from:<br>
-  https://www.pexels.com/
-- Font style from:<br>
-  https://fonts.google.com/specimen/Barlow?query=Barlow
+- [AudioDB](https://www.theaudiodb.com/) - Images on the signin/signup page and album cover images.
+- [Google Fonts](https://www.theaudiodb.com/) - The Bricolage Grotesque fontnand some icons.
+- [Font Awesome](https://fontawesome.com/) - Icons such as star, searchicon and others.
 
 ## Acknowledgements:
 
-- My mentor
+- My mentor, Antonio.
 - The Swedish community on Slack, always ready and willing to help and support.
 
  [i5]: https://github.com/andersganander/albumtalk/issues/5
