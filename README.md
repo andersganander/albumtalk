@@ -485,3 +485,5 @@ This project has greatly benefited from the educational resources and example pr
  [i22]: https://github.com/andersganander/albumtalk/issues/22
 
  [i12]: https://github.com/andersganander/albumtalk/issues/12
+
+ [i31]: https://github.com/andersganander/albumtalk/issues/31
