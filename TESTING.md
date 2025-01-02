@@ -4,28 +4,28 @@
 
 - [Table of contents](#table-of-contents)
 - [Manual Testing](#manual-testing)
-    - [Epic: Account](#epic-account)
-    - [Epic: Navigation OBS BYT UT BILD 1](#epic-navigation-obs-byt-ut-bild-1)
-    - [Epic: Albums](#epic-albums)
-    - [Epic: Write review](#epic-write-review)
-    - [Epic: Edit and delete review FORTSÄTT HÄR](#epic-edit-and-delete-review-forts%C3%A4tt-h%C3%A4r)
-    - [Epic: View reviews](#epic-view-reviews)
-    - [Epic: Comments](#epic-comments)
-    - [Epic: Profile page](#epic-profile-page)
-    - [Epic: Follow/unfollow](#epic-followunfollow)
-    - [Epic: Search](#epic-search)
+  - [Epic: Account](#epic-account)
+  - [Epic: Navigation (OBS BYT UT BILD 1)](#epic-navigation-obs-byt-ut-bild-1)
+  - [Epic: Albums](#epic-albums)
+  - [Epic: Write review](#epic-write-review)
+  - [Epic: Edit and delete review FORTSÄTT HÄR](#epic-edit-and-delete-review-fortsätt-här)
+  - [Epic: View reviews](#epic-view-reviews)
+  - [Epic: Comments](#epic-comments)
+  - [Epic: Profile page](#epic-profile-page)
+  - [Epic: Follow/unfollow](#epic-followunfollow)
+  - [Epic: Search](#epic-search)
 - [Validator Testing](#validator-testing)
-    - [HTML SKA DET HÄR VARA MED?](#html-ska-det-h%C3%A4r-vara-med)
-        - [Fixed Errors KOLLAAAAAAAA](#fixed-errors-kollaaaaaaaa)
-    - [CSS SKA DET HÄR VARA MED?](#css-ska-det-h%C3%A4r-vara-med)
-    - [Javascript SKA DET HÄR VARA MED?](#javascript-ska-det-h%C3%A4r-vara-med)
-    - [Python JMF MED API README](#python-jmf-med-api-readme)
-    - [Lighthouse KOLLA](#lighthouse-kolla)
+  - [HTML (SKA DET HÄR VARA MED?)](#html-ska-det-här-vara-med)
+    - [Fixed Errors (KOLLAAAAAAAA)](#fixed-errors-kollaaaaaaaa)
+  - [CSS (SKA DET HÄR VARA MED?)](#css-ska-det-här-vara-med)
+  - [Javascript (SKA DET HÄR VARA MED?)](#javascript-ska-det-här-vara-med)
+  - [Python (JMF MED API README )](#python-jmf-med-api-readme-)
+  - [Lighthouse (KOLLA)](#lighthouse-kolla)
 - [Browser Testing](#browser-testing)
 - [Device Testing](#device-testing)
 - [Bugs](#bugs)
-    - [Fixed Bugs KANSKE BARA HÄNVISA TILL ISSUES](#fixed-bugs-kanske-bara-h%C3%A4nvisa-till-issues)
-    - [Unfixed bugs: KANSKE BARA HÄNVISA TILL ISSUES](#unfixed-bugs-kanske-bara-h%C3%A4nvisa-till-issues)
+  - [Fixed Bugs (KANSKE BARA HÄNVISA TILL ISSUES)](#fixed-bugs-kanske-bara-hänvisa-till-issues)
+  - [Unfixed bugs: (KANSKE BARA HÄNVISA TILL ISSUES)](#unfixed-bugs-kanske-bara-hänvisa-till-issues)
 
 <!-- /TOC -->
 
@@ -229,15 +229,20 @@ Not validated. It seems like the modal used in delete subscription is not "compa
 
 ### Unfixed bugs: (KANSKE BARA HÄNVISA TILL ISSUES)
 
-The following bugs are still on the backlog.
+Below follows a list of bugs that have not been addressed prior to the first release. None of the bugs have been considered so critical that they had to be addressed before the first version of AlbumTalk and will therfore be prioritized and handled in upcoming sprints.
 
-![Unfixed bugs](docs/readme_images/testing/Unfixed_bugs.png)
+![Unfixed bugs](https://github.com/andersganander/albumtalk/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
-**Fix Check box is not shown in edit subscription form #47**
+| Bug                                                | Link         |
+| :------------------------------------------------- |:-------------|
+| Fix empty links to Discogs and wikipedia           | [#68][i68]   |
+| Fix Stars still filled when users logged out       | [#75][i75]   |
+| Fix No message shown when there are no reviews     | [#76][i76]   |
+| Fix Wrong favorite albums shown for logged in user | [#80][i80]   |
+| Fix console warnings                               | [#81][i81]   |
 
-The initial idea was to use materialize's switch component in the edit subscription form. Due to an incompability between materialize and Django that was not as easy to implement as expected. There seem to be some inconsistence in the way Django renders it's checkbox widget and the html that materialize expects. The following discussion on StackOverflow describes the problem.
-https://stackoverflow.com/questions/54500348/django-checkbox-not-showing-up-in-html
-The proposed solution is to overwrite the default checkbox widget.
-
-To be able to change the value for active, a workaround has been implemented. Instead of using the checkboxinput widget, the select widget has been used:
-'active': forms.Select(attrs={'class': 'browser-default'}, choices=[[True,'Yes'],[False,'No']]),
+[i68]: https://github.com/andersganander/albumtalk/issues/68
+[i75]: https://github.com/andersganander/albumtalk/issues/75
+[i76]: https://github.com/andersganander/albumtalk/issues/76
+[i80]: https://github.com/andersganander/albumtalk/issues/80
+[i81]: https://github.com/andersganander/albumtalk/issues/81
