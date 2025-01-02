@@ -42,26 +42,6 @@ function SignInForm() {
     } catch (err) {
       setErrors(err.response?.data);
     }
-
-    // // Workaround to get the user object from the backend
-    // try {
-    //   const { data } = await axios.get("dj-rest-auth/user/");
-    //   console.log("WORKAROUND DATA: " + JSON.stringify(data));
-    // }
-    // catch (err) {
-    //   console.log(err);
-    // }
-
-    // Workaround 2
-    // axios.get(`dj-rest-auth/user/`, {
-    //     headers: { 'Authorization': 'Token ${data.key}' }
-    //   }
-    // ).then(res => {
-    //   console.log("RES:" + res)
-    // }).catch(Error => {
-    //   console.log(Error)
-    // })
-
   };
 
   const handleChange = (event) => {

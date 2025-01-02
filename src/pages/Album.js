@@ -92,20 +92,15 @@ return (
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}>
 
           <OverlayTrigger
+                transition = {false}
                 placement="top"
                 overlay={<Tooltip>Click for album reviews!</Tooltip>}
               >
                 <Link to={`/albums/${id}`} title="Reviews">
-              <span class="material-symbols-outlined">rate_review</span>   
+              <span className="material-symbols-outlined">rate_review</span>   
               {reviews_count}
           </Link>
           </OverlayTrigger>
-
-            
-
-           {/* <span class="material-symbols-outlined" title="Mark as favorite">star</span> */}
-
-           {/* NEW CODE START */}
            
            { favorite_id ? (
               <span onClick={handleUnfavorite}>
@@ -117,6 +112,7 @@ return (
               </span>
             ) : (
               <OverlayTrigger
+                transition={false}
                 placement="top"
                 overlay={<Tooltip>Log in to add albums to your favorite list!</Tooltip>}
               >
@@ -124,13 +120,12 @@ return (
               </OverlayTrigger>
             )}
 
-          {/* NEW CODE END */}
-
           <OverlayTrigger
+                transition={false}
                 placement="top"
                 overlay={<Tooltip>Click for album description!</Tooltip>}
               >
-                <span class="material-symbols-outlined" title="Album description">top_panel_open</span>
+                <span className="material-symbols-outlined" title="Album description">top_panel_open</span>
           </OverlayTrigger>
             
             
@@ -146,12 +141,14 @@ return (
             </div>
             <div className={styles.ExtLinks}>
             <OverlayTrigger
+                transition = {false}
                 placement="top"
                 overlay={<Tooltip>Read more about this album on Wikipedia</Tooltip>}
               >
                  <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
               </OverlayTrigger>
               <OverlayTrigger
+                transition = {false}
                 placement="top"
                 overlay={<Tooltip>View album details, tracklist, and credits on Discogs</Tooltip>}
               >

@@ -9,16 +9,15 @@ import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-    <Router>
-      <CurrentUserProvider>
-        <ProfileDataProvider>
-          <App />
-        </ProfileDataProvider>
-      </CurrentUserProvider>
-    </Router>,
-   document.getElementById("root")
+  <Router>
+    <CurrentUserProvider>
+      <ProfileDataProvider>
+        <App />
+      </ProfileDataProvider>
+    </CurrentUserProvider>
+  </Router>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

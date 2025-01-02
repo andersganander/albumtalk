@@ -52,14 +52,16 @@ const FavoriteAlbums = ({ mobile }) => {
           {mobile ? (
             <div>
               {favorites.results.slice(0, 4).map((album) => (
-                <Link to={`/albums/${album.id}`}>
-                <img src={album.image_url} height={75} />
-              </Link>
+                <span key={album.id}>
+                  <Link to={`/albums/${album.id}`}>
+                    <img src={album.image_url} height={75} />
+                  </Link>
+                </span>
               ))}
             </div>
           ) : (
             favorites.results.map((album) => (
-              <div className={listStyles.listAlbum}>
+              <div key={album.id} className={listStyles.listAlbum}>
                 <Link to={`/albums/${album.id}`}>
                   <img src={album.image_url} height={100} />
                 </Link>
