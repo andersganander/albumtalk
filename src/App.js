@@ -15,12 +15,16 @@ import ReviewPage from "./pages/reviews/ReviewPage";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 // import { createContext, useEffect, useState } from "react";
 // import axios from "axios";
 
 
 function App() {
+
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
 
   return (
     <div className={styles.App}>
@@ -49,6 +53,16 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
+          />
+          <Route
+            exact
+            path="/feed"
+            render={() => (
+              <ReviewPage
+                message="No results found. Adjust the search keyword or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )}
           />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
