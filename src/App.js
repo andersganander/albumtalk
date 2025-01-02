@@ -58,7 +58,7 @@ function App() {
             exact
             path="/feed"
             render={() => (
-              <ReviewPage
+              <ReviewsPage
                 message="No results found. Adjust the search keyword or follow a user."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
               />
