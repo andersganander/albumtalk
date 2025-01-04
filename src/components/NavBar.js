@@ -18,14 +18,13 @@ const NavBar = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
-      console.log(err);
     }
   };
 
   const loggedIn = (
     <>
       <NavLink className={styles.NavLink} to="/feed">
-        FEED
+        THEFEED
       </NavLink>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         SIGNOUT

@@ -1,22 +1,22 @@
 .Owner {
-    font-weight: bold;
-    color:  rgb(164, 45, 45);
-    margin-right: 8px;
-  }
-  
-  .Date {
-    font-weight: lighter;
-    color: #060606;
-  }
-  
-  .Content {
-    text-align: left;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-  }
+  font-weight: bold;
+  color: rgb(164, 45, 45);
+  margin-right: 8px;
+}
 
-  .Background {
-    background-color:#bddbff7d;
-    padding: 20px;
-    border-radius: 10px;
-  }
+.Date {
+  font-weight: lighter;
+  color: #060606;
+}
+
+.Content {
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.Background {
+  background-color: #bddbff7d;
+  padding: 20px;
+  border-radius: 10px;
+}

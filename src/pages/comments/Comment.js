@@ -33,11 +33,8 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
-      console.log('FÖRE GO BACK');
       history.goBack();
     } catch (err) {
-      console.log('ERROR ERROR '+err);
-      // TODO TROUBLESHHOT WHAT HAPPENS HERE...
       history.goBack();
     }
   };

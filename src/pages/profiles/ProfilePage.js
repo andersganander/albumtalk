@@ -10,8 +10,6 @@ import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-// TODO Add popularprofiles component 
-//import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -29,7 +27,7 @@ import FavoriteAlbums from "../FavoriteAlbums";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [profileReviews, setProfileReviews] = useState({ results: [] });  
+  const [profileReviews, setProfileReviews] = useState({ results: [] });
 
   const currentUser = useCurrentUser();
   const { id } = useParams();
@@ -44,15 +42,10 @@ function ProfilePage() {
     const fetchData = async () => {
       try {
         const [{ data: pageProfile }, { data: profileReviews }] =
-            await Promise.all([
+          await Promise.all([
             axiosReq.get(`/profiles/${id}/`),
-            axiosReq.get(`/reviews/?owner__profile=${id}`),  
-        ]);
-
-        console.log('PAGEPROFILE ' + pageProfile.owner)
-        console.log('PROFILEREVIES ' + profileReviews.results)
-        console.log('LENGTH ' + profileReviews.results.length)
-
+            axiosReq.get(`/reviews/?owner__profile=${id}`),
+          ]);
 
         setProfileData((prevState) => ({
           ...prevState,
@@ -61,7 +54,6 @@ function ProfilePage() {
         setProfileReviews(profileReviews);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
       }
     };
     fetchData();
@@ -115,10 +107,10 @@ function ProfilePage() {
             ))}
         </Col>
         {profile?.content && <Col className="p-3">
-            <div className={styles.Content}>
-              {profile.content}
-            </div>
-          </Col>}
+          <div className={styles.Content}>
+            {profile.content}
+          </div>
+        </Col>}
 
       </Row>
     </>
@@ -127,7 +119,7 @@ function ProfilePage() {
   const mainProfileReviews = (
     <>
       <hr />
-      <FavoriteAlbums mobile/>
+      <FavoriteAlbums mobile />
       <hr />
       <h5 className={styles.ProfileName}>{profile?.owner}'s reviews</h5>
       {profileReviews.results.length ? (
@@ -152,7 +144,7 @@ function ProfilePage() {
   return (
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        
+
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>

@@ -3,7 +3,6 @@ import axios from "axios";
 
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
-//import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
@@ -34,10 +33,7 @@ function SignInForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      console.log("signInData" + signInData.username + ": " + signInData.password)
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-      console.log("LOGIN DATA: " + JSON.stringify(data));
-      //console.log("USER DATA: " + data.user + " " + data.key)
       setCurrentUser(data.user);
       history.push("/");
     } catch (err) {

@@ -31,7 +31,6 @@ function AlbumsPage({ message, filter = "" }) {
         setAlbums(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
       }
     };
 
@@ -49,7 +48,7 @@ function AlbumsPage({ message, filter = "" }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-       <PopularProfiles mobile />
+        <PopularProfiles mobile />
 
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
@@ -68,20 +67,20 @@ function AlbumsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {albums ? (
-             <InfiniteScroll
-             children={albums.results.map((album) => (
-               <Album key={album.id} {...album} setAlbums={setAlbums} />
-             ))}
-             dataLength={albums.results.length}
-             loader={<Asset spinner />}
-             hasMore={!!albums.next}
-             next={() => fetchMoreData(albums, setAlbums)}
-             endMessage={
-              <p style={{ textAlign: 'center' }}>
-                <b>I don't know where I'm going from here, but I promise it won't be boring.</b>
-              </p>
-            }
-           />
+              <InfiniteScroll
+                children={albums.results.map((album) => (
+                  <Album key={album.id} {...album} setAlbums={setAlbums} />
+                ))}
+                dataLength={albums.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!albums.next}
+                next={() => fetchMoreData(albums, setAlbums)}
+                endMessage={
+                  <p style={{ textAlign: 'center' }}>
+                    <b>I don't know where I'm going from here, but I promise it won't be boring.</b>
+                  </p>
+                }
+              />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />

@@ -1,24 +1,15 @@
-
 .DropdownItem {
-    display: inline-block;
-    max-width: 50%;
-    padding: 0px;
-  }
+  display: inline-block;
+  max-width: 50%;
+  padding: 0px;
+}
 
-   /* verkar inte funka*/
-   a.dropdown-item:active {
-    background-color:rgb(164, 45, 45)!important;
-  }
+a.dropdown-item:active {
+  background-color: rgb(164, 45, 45) !important;
+}
 
-  /*a:active {
-    background-color:rgb(164, 45, 45)!important;
-  }*/
-
-  /* ------------ */
-  
-  .Absolute {
-    position: absolute;
-    right: 0;
-    z-index: 99;
-  }
-  
+.Absolute {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+}

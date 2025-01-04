@@ -1,25 +1,24 @@
 .Form {
-    border: none;
-    border-bottom: 2px rgb(164, 45, 45) solid;
-  }
-  
-  .Button {
-    border: none;
-    background-color: rgb(164, 45, 45);
-    color: white;
-    /*border-radius: 100px;*/
-    padding: 4px 10px;
-    min-width: 75px;
-    margin: 5px;
-  }
-  
-  .Button:hover {
-    cursor: pointer;
-    background-color: whitesmoke;
-    color: rgb(164, 45, 45);
-  }
+  border: none;
+  border-bottom: 2px rgb(164, 45, 45) solid;
+}
 
-  .Message {
-    background-color: lightyellow;
-    font-weight: bold;
-  }
+.Button {
+  border: none;
+  background-color: rgb(164, 45, 45);
+  color: white;
+  padding: 4px 10px;
+  min-width: 75px;
+  margin: 5px;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background-color: whitesmoke;
+  color: rgb(164, 45, 45);
+}
+
+.Message {
+  background-color: lightyellow;
+  font-weight: bold;
+}

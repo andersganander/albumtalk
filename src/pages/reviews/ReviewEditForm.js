@@ -12,20 +12,10 @@ function ReviewEditForm(props) {
   const [formContent, setFormContent] = useState(content);
   const [formRating, setRating] = useState(rating);
 
-    // Optinal callback functions
-    const onPointerEnter = () => console.log('Enter')
-    const onPointerLeave = () => console.log('Leave')
-    const onPointerMove = (value, index) => console.log(value, index)
+  const handleRating = (rate) => {
+    setRating(rate)
+  }
 
-    const handleRating = (rate) => {
-      setRating(rate)
-
-      // other logic
-    }
-
-  // const handleChange = (event) => {
-  //   setFormContent(event.target.value);
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,17 +29,16 @@ function ReviewEditForm(props) {
         results: prevReviews.results.map((review) => {
           return review.id === id
             ? {
-                ...review,
-                content: formContent.trim(),
-                rating: formRating,
-                updated_at: "now",
-              }
+              ...review,
+              content: formContent.trim(),
+              rating: formRating,
+              updated_at: "now",
+            }
             : review;
         }),
       }));
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
     }
   };
 
@@ -63,13 +52,10 @@ function ReviewEditForm(props) {
           onChange={(e) => setFormContent(e.target.value)}
           rows={4}
         />
-       
+
         <div>
           <Rating
             onClick={handleRating}
-            onPointerEnter={onPointerEnter}
-            onPointerLeave={onPointerLeave}
-            onPointerMove={onPointerMove}
             /* Available Props */
             initialValue={rating}
             iconsCount={5}

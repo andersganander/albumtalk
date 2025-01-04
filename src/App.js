@@ -17,9 +17,6 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 
-// import { createContext, useEffect, useState } from "react";
-// import axios from "axios";
-
 
 function App() {
 

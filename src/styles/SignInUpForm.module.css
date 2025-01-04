@@ -1,62 +1,57 @@
 .Row {
-    height: calc(100vh - 81px);
-    justify-content: space-around;
-  }
-  .Input {
-    background: #ffffff!important;
-    border: 1px solid #f0f1f9;
-    box-sizing: border-box;
-    border-radius: 2px;
-    /*color: #7177a1;*/
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .Header {
-    font-family: 'Bricolage Grotesque';
-    /*font-weight: bolder!important;*/
-    /*font-size: x-large!important;*/
-    color:rgb(164, 45, 45);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 19px;
-    text-align: center;
-    /*letter-spacing: 0.2em;*/
-    text-transform: uppercase;
-    /*color: #2142b2;*/
-  }
-  
-  .Link {
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    margin: auto;
-  }
-  
-  .Link span {
-    color:rgb(164, 45, 45);
-  }
-  
-  .Container {
-    display: flex;
-    justify-content:center;
-    /*padding: 30px 10px;*/
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 2px;
-    border: 1px solid #dadadf;
-  }
+  height: calc(100vh - 81px);
+  justify-content: space-around;
+}
 
-  .ContainerRight {
-    padding: 30px 10px;
-    justify-content: right;
-  }
-  
-  .SignInCol {
-    height: 320px;
-  }
-  
-  .SignUpCol {
-    height: 375px;
-  }
+.Input {
+  background: #ffffff !important;
+  border: 1px solid #f0f1f9;
+  box-sizing: border-box;
+  border-radius: 2px;
+  text-align: center;
+  padding: 10px;
+}
+
+.Header {
+  font-family: 'Bricolage Grotesque';
+  color: rgb(164, 45, 45);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.Link span {
+  color: rgb(164, 45, 45);
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid #dadadf;
+}
+
+.ContainerRight {
+  padding: 30px 10px;
+  justify-content: right;
+}
+
+.SignInCol {
+  height: 320px;
+}
+
+.SignUpCol {
+  height: 375px;
+}

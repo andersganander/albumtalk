@@ -11,50 +11,27 @@ import { Rating } from 'react-simple-star-rating'
 
 function ReviewCreateForm(props) {
   const { album, setAlbum, setReviews, profileImage, profile_id } = props;
+  const [rating, setRating] = useState(0)
+  const [content, setContent] = useState('')
+  const [hasReviewed, setHasReviewed] = useState(false);
 
-  // const [reviewData, setReviewData] = useState({
-  //   content: "",
-  //   rating: 1 ,
-  // });
-  
-  //const { content, rating } = reviewData;
-
-  //const [content, setContent] = useState("");
-
-    const [rating, setRating] = useState(0)
-    const [content, setContent] = useState('')
-    const [hasReviewed, setHasReviewed] = useState(false);
-
-     // Optinal callback functions
-    const onPointerEnter = () => console.log('Enter')
-    const onPointerLeave = () => console.log('Leave')
-    const onPointerMove = (value, index) => console.log(value, index)
-
-//   const handleChange = (event) => {
-//     setReviewData({
-//         ...reviewData,
-//         [event.target.name]: event.target.value,
-//     });
-//   };
-
-    useEffect(() => {
-      const fetchUserReviews = async () => {
-        setHasReviewed(false); 
-        try {
-          const { data } = await axiosReq.get(`/reviews/?album=${album}&owner__profile=${profile_id}`);
-          if (data.results.length > 0) {
-            setHasReviewed(true);
-          }
-        } catch (err) {
-          console.log("Error fetching user reviews: ", err);
+  useEffect(() => {
+    const fetchUserReviews = async () => {
+      setHasReviewed(false);
+      try {
+        const { data } = await axiosReq.get(`/reviews/?album=${album}&owner__profile=${profile_id}`);
+        if (data.results.length > 0) {
+          setHasReviewed(true);
         }
-      };
-      fetchUserReviews();
-    }, [profile_id, album]);
+      } catch (err) {
+      }
+    };
+    fetchUserReviews();
+  }, [profile_id, album]);
 
-    const handleRating = (rate) => {
-      setRating(rate)
-    }
+  const handleRating = (rate) => {
+    setRating(rate)
+  }
 
 
   const handleSubmit = async (event) => {
@@ -67,7 +44,6 @@ function ReviewCreateForm(props) {
 
     try {
       const { data } = await axiosRes.post("/reviews/", formData);
-      console.log('DATA '+data);
       setReviews((prevReviews) => ({
         ...prevReviews,
         results: [data, ...prevReviews.results],
@@ -83,7 +59,6 @@ function ReviewCreateForm(props) {
       setContent("");
       setRating(0);
     } catch (err) {
-      console.log('ERR' + err);
     }
   };
 
@@ -106,20 +81,17 @@ function ReviewCreateForm(props) {
             onChange={(e) => setContent(e.target.value)}
             rows={4}
           />
-            
 
-            <div>
-              <Rating
-                onClick={handleRating}
-                onPointerEnter={onPointerEnter}
-                onPointerLeave={onPointerLeave}
-                onPointerMove={onPointerMove}
-                /* Available Props */
-                initialValue={rating}
-                iconsCount={5}
-                size={30}
-              />
-            </div>
+
+          <div>
+            <Rating
+              onClick={handleRating}
+              /* Available Props */
+              initialValue={rating}
+              iconsCount={5}
+              size={30}
+            />
+          </div>
 
         </InputGroup>
       </Form.Group>

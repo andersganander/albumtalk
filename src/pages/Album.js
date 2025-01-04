@@ -4,31 +4,22 @@ import { useCurrentUser } from "../contexts/CurrentUserContext";
 import { Accordion, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { axiosRes } from "../api/axiosDefaults";
-//import Avatar from "../../components/Avatar";
 
 const Album = (props) => {
   const {
     id,
-    album_format,
-    artist,
     description,
     discogs_id,
-    genre,
     image_url,
-    label,
     release_year,
-    style,
     title,
     wikipedia_id,
     reviews_count,
-    favorite_count,
     favorite_id,
     setAlbums,
   } = props;
 
   const currentUser = useCurrentUser();
-  //const is_owner = currentUser?.username === owner;
-  //const history = useHistory();
 
   const handleFavorite = async () => {
     try {
@@ -42,7 +33,6 @@ const Album = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
     }
   };
 
@@ -58,7 +48,6 @@ const Album = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
     }
   };
 
@@ -78,7 +67,7 @@ return (
     <Card.Body>
       <Media className={styles.CoverDetails}>
         <Link to={`/albums/${id}`}>
-          <img src={image_url} height={350} />
+          <img src={image_url} height={350} alt="Album cover"/>
         </Link>
        
       </Media>
@@ -145,14 +134,14 @@ return (
                 placement="top"
                 overlay={<Tooltip>Read more about this album on Wikipedia</Tooltip>}
               >
-                 <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank'>Wikipedia</a>
+                 <a href={`https://en.wikipedia.org/wiki/${wikipedia_id}`} target='_blank' rel="noreferrer">Wikipedia</a>
               </OverlayTrigger>
               <OverlayTrigger
                 transition = {false}
                 placement="top"
                 overlay={<Tooltip>View album details, tracklist, and credits on Discogs</Tooltip>}
               >
-               <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank'>Discogs</a>
+               <a href={`https://www.discogs.com/master/${discogs_id}`} target='_blank' rel="noreferrer">Discogs</a>
               </OverlayTrigger>
             </div>
           </Card.Body>

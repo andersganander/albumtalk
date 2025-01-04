@@ -1,3 +1,8 @@
+// ReviewsPage component fetches and displays a list of reviews.
+// It includes a search bar for filtering reviews by query, handles infinite scrolling for more content,
+// and displays the most rated albums alongside the reviews.
+// The component uses React hooks for state management and side effects.
+
 import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -31,7 +36,6 @@ function ReviewsPage({ message, filter = "" }) {
         setReviews(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
       }
     };
 

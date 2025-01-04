@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 const MostRatedAlbums = ({ mobile }) => {
   const [albumData, setAlbumData] = useState({
-    // pageProfile: { results: [] },
     mostRated: { results: [] },
   });
   const { mostRated } = albumData;
@@ -26,7 +25,6 @@ const MostRatedAlbums = ({ mobile }) => {
           mostRated: data,
         }));
       } catch (err) {
-        console.log(err);
       }
     };
 
@@ -35,9 +33,8 @@ const MostRatedAlbums = ({ mobile }) => {
 
   return (
     <Container
-      className={`${appStyles.Content} ${
-        mobile && "d-lg-none text-center mb-3"
-      }`}
+      className={`${appStyles.Content} ${mobile && "d-lg-none text-center mb-3"
+        }`}
     >
       {mostRated.results.length ? (
         <>
@@ -47,20 +44,20 @@ const MostRatedAlbums = ({ mobile }) => {
               {mostRated.results.slice(0, 4).map((album) => (
                 <span key={album.id}>
                   <Link to={`/albums/${album.id}`}>
-                    <img src={album.image_url} height={75} />
+                    <img src={album.image_url} height={75} alt="Album Cover" />
                   </Link>
-              </span>
+                </span>
               ))}
             </div>
           ) : (
             mostRated.results.map((album) => (
               <div key={album.id} className={listStyles.listAlbum}>
                 <Link to={`/albums/${album.id}`}>
-                  <img src={album.image_url} height={100} />
+                  <img src={album.image_url} height={100} alt="Album Cover" />
                 </Link>
                 <p className={listStyles.listHeaderSmall}>{album.title}</p>
                 <br />
-            </div>
+              </div>
             ))
           )}
         </>

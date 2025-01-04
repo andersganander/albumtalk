@@ -1,39 +1,36 @@
 .listHeader {
-    font-family: 'Bricolage Grotesque';
-    color:rgb(164, 45, 45);
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    /*letter-spacing: 0.2em;*/
-    text-transform: uppercase;
-    /* https://www.shecodes.io/athena/64094-how-to-change-the-space-between-words-in-css */
-    word-spacing: -5px;
-    margin-bottom: 25px;
-  }
+  font-family: 'Bricolage Grotesque';
+  color: rgb(164, 45, 45);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  /* https://www.shecodes.io/athena/64094-how-to-change-the-space-between-words-in-css */
+  word-spacing: -5px;
+  margin-bottom: 25px;
+}
 
-  .listHeaderSmall {
-    font-family: 'Bricolage Grotesque';
-    color:rgb(164, 45, 45);
-    font-weight: bold;
-    font-size: 14px;
-    /*line-height: 19px;*/
-    text-align: center;
-    /*letter-spacing: 0.2em;*/
-    text-transform: uppercase;
-    /* https://www.shecodes.io/athena/64094-how-to-change-the-space-between-words-in-css */
-    word-spacing: -3px;
-    margin-left: 5px;
-  }
+.listHeaderSmall {
+  font-family: 'Bricolage Grotesque';
+  color: rgb(164, 45, 45);
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  /* https://www.shecodes.io/athena/64094-how-to-change-the-space-between-words-in-css */
+  word-spacing: -3px;
+  margin-left: 5px;
+}
 
-  .verticalList {
-    
-    margin: 10px;
-  }
+.verticalList {
 
-  .listAlbum {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
+  margin: 10px;
+}
+
+.listAlbum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}

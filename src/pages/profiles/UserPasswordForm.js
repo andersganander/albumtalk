@@ -37,7 +37,6 @@ const UserPasswordForm = () => {
 
   useEffect(() => {
     if (currentUser?.profile_id?.toString() !== id) {
-      // redirect user if they are not the owner of this profile
       history.push("/");
     }
   }, [currentUser, history, id]);
@@ -48,7 +47,6 @@ const UserPasswordForm = () => {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       history.goBack();
     } catch (err) {
-      // console.log(err);
       setErrors(err.response?.data);
     }
   };
@@ -59,7 +57,7 @@ const UserPasswordForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-            <h5 className={styles.Header}>Changepassword</h5>
+              <h5 className={styles.Header}>Changepassword</h5>
               <Form.Control
                 placeholder="new password"
                 type="password"
@@ -74,7 +72,7 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-            <h6 className={styles.Header}>confirmnewpassword</h6>
+              <h6 className={styles.Header}>confirmnewpassword</h6>
               <Form.Control
                 placeholder="confirm new password"
                 type="password"

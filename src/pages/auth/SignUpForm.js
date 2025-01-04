@@ -7,7 +7,6 @@ import appStyles from "../../App.module.css";
 
 import {
   Form,
-  Button,
   Image,
   Col,
   Row,
@@ -16,8 +15,6 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import img1 from "../../assets/AS_eyes_3.png"
-import img2 from "../../assets/AS_mouth.png"
-
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
