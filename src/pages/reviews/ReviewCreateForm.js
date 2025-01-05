@@ -1,3 +1,7 @@
+// ReviewCreateForm allows users to submit a new review for an album, including a rating and content.
+// It checks if the user has already reviewed the album and prevents duplicate reviews.
+// The form integrates a star rating component and updates the album and review data upon submission.
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 

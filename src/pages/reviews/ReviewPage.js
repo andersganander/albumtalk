@@ -1,3 +1,7 @@
+// ReviewPage displays a detailed view of a specific review along with its comments.
+// It allows logged-in users to add comments and updates the list of comments in real-time.
+// The page also includes a section showcasing the most-rated albums for context and exploration.
+
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";

@@ -1,3 +1,7 @@
+// Album component displays detailed information about a music album, including its title, release year, cover image, and description.
+// It allows users to mark the album as a favorite, view reviews, and access external links for more information on Wikipedia and Discogs.
+// The component includes interactive tooltips, an accordion for toggling descriptions, and dynamic favorite functionality for logged-in users.
+
 import React from "react";
 import styles from "../styles/Album.module.css";
 import { useCurrentUser } from "../contexts/CurrentUserContext";

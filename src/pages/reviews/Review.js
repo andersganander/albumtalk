@@ -1,3 +1,6 @@
+// Review component displays individual reviews, including content, rating, and associated album details.
+// It allows the owner to edit or delete their reviews and includes a link to view comments.
+// The component integrates a star rating system and uses dropdown options for review management.
 
 import React, { useState } from "react";
 import { Media, OverlayTrigger, Tooltip } from "react-bootstrap";

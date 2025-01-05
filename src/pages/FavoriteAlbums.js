@@ -1,3 +1,7 @@
+// FavoriteAlbums displays a user's favorite albums in a compact or detailed format based on the device view.
+// It fetches and lists favorite albums, including their cover images and links to detailed album pages.
+// The component adapts for mobile and desktop views and shows a placeholder message if no favorites are found.
+
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../api/axiosDefaults";

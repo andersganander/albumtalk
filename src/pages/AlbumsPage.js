@@ -1,3 +1,7 @@
+// AlbumsPage displays a list of albums with a search bar for filtering and infinite scrolling for continuous loading.
+// It dynamically fetches and displays albums based on user input and filters.
+// The page also highlights popular profiles and includes a loading spinner for improved user experience.
+
 import React, { useEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";

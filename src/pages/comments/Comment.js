@@ -1,3 +1,8 @@
+// Comment component displays an individual comment along with options for editing or deleting it.
+// It includes user details, comment content, and timestamps.
+// The component allows the owner of the comment to edit or delete it via dropdown options,
+// and it handles the deletion process by updating the parent components' state.
+
 import React, {  useState } from "react";
 import { Media } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";

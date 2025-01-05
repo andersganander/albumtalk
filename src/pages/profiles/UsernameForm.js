@@ -1,3 +1,7 @@
+// UsernameForm allows users to update their username.
+// It validates the user's input, displays error messages if necessary, and updates the username upon submission.
+// The form also includes options to cancel and go back to the previous page.
+
 import React, { useEffect, useState } from "react";
 
 import Alert from "react-bootstrap/Alert";

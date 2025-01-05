@@ -1,3 +1,7 @@
+// ProfilePage displays detailed information about a user's profile.
+// It includes profile stats, reviews, and allows following/unfollowing.
+// The page supports infinite scrolling for reviews and shows favorite albums.
+
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";

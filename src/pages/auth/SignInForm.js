@@ -1,3 +1,8 @@
+// SignInForm component handles the user authentication process.
+// It provides a form for users to input their credentials, submits the data to the server,
+// and manages error handling and navigation upon successful login.
+// This component utilizes React hooks for state management and form handling.
+
 import React, { useState } from "react";
 import axios from "axios";
 

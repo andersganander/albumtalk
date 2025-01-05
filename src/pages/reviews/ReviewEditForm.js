@@ -1,3 +1,7 @@
+// ReviewEditForm allows users to edit an existing review by updating its content and rating.
+// The form includes a textarea for editing the review content and a star rating component for updating the rating.
+// Changes are saved via an API call, and the updated review is reflected in the local state.
+
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";

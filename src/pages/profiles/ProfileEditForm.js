@@ -1,3 +1,7 @@
+// ProfileEditForm allows users to edit their profile details.
+// It includes fields for updating the user's name, bio, and profile image.
+// The form handles validation errors and displays alerts for any issues.
+
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
 

@@ -1,3 +1,8 @@
+// CommentCreateForm component allows users to submit new comments on a review.
+// It includes a textarea for input and a submit button, and updates the list of comments and comment count upon successful submission.
+// The component uses React hooks for state management and form handling.
+
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 

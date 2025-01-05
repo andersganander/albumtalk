@@ -1,3 +1,7 @@
+// Profile component displays individual user profile details.
+// It includes an avatar, username, and follow/unfollow buttons.
+// The layout adjusts for mobile and desktop views, and the follow buttons are shown only for non-owners.
+
 import React from "react";
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/ATButton.module.css";

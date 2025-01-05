@@ -1,3 +1,7 @@
+// AlbumPage displays a detailed view of a specific album along with its reviews.
+// It allows logged-in users to add a review and dynamically updates the album and review data.
+// The page also includes a section for most-rated albums and a back button for navigation.
+
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";

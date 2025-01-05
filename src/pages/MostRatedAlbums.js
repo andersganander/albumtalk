@@ -1,3 +1,7 @@
+// MostRatedAlbums displays a list of albums with the highest number of reviews.
+// It fetches data ordered by review count and presents albums in a compact or detailed format based on the device view.
+// The component adapts for mobile and desktop layouts and shows a loading spinner while data is being fetched.
+
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../api/axiosDefaults";

@@ -1,3 +1,7 @@
+// CommentEditForm component allows users to edit an existing comment.
+// It provides a textarea pre-filled with the comment's current content, and buttons to save changes or cancel the edit.
+// The component updates the comment in the backend and the local state upon successful submission.
+
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";

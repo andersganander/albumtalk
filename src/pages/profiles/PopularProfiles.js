@@ -1,3 +1,6 @@
+// PopularProfiles component displays a list of the most followed profiles.
+// It fetches profile data from the context and shows a different layout for mobile and desktop views.
+
 import React from "react";
 import { Container } from "react-bootstrap";
 import appStyles from "../../App.module.css";

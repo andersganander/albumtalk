@@ -1,3 +1,8 @@
+// SignUpForm component manages the user registration process.
+// It provides a form for users to enter their registration details, sends the data to the server,
+// and handles any errors that occur during the submission process.
+// The component uses React hooks to manage form state and navigation.
+
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 

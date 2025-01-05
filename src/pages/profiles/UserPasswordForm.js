@@ -1,3 +1,7 @@
+// UserPasswordForm allows users to change their password.
+// It includes fields for entering and confirming the new password, validates the input, and updates the password upon submission.
+// The form provides error messages for invalid inputs and options to cancel or save changes.
+
 import React, { useEffect, useState } from "react";
 
 import Alert from "react-bootstrap/Alert";
