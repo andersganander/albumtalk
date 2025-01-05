@@ -19,7 +19,6 @@ const Review = (props, albumtitle) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  //const [star_rating, setStarRating] = useState(0)
   const [setStarRating] = useState(0)
   const handleRating = (rate) => {
     setStarRating(rate)
