@@ -12,7 +12,7 @@ import Asset from "../../components/Asset";
 
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
+import btnStyles from "../../styles/ATButton.module.css";
 
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router";
@@ -96,14 +96,14 @@ function ProfilePage() {
             !is_owner &&
             (profile?.following_id ? (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                className={`${btnStyles.Button}`}
                 onClick={() => handleUnfollow(profile)}
               >
                 UNFOLLOW
               </Button>
             ) : (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.Black}`}
+                className={`${btnStyles.Button}`}
                 onClick={() => handleFollow(profile)}
               >
                 FOLLOW

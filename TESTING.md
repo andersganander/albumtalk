@@ -20,7 +20,7 @@
   - [Python](#python)
   - [Lighthouse](#lighthouse)
 - [Browser Testing](#browser-testing)
-- [Device Testing (TODO)](#device-testing-todo)
+- [Device Testing](#device-testing)
 - [Bugs](#bugs)
   - [Fixed Bugs](#fixed-bugs)
   - [Unfixed bugs](#unfixed-bugs)
@@ -147,12 +147,13 @@ The low performance score for the album page, among others, is largely due to th
 
 ## Browser Testing
 
-- The Website was tested on Google Chrome and Firefox browsers on MacOS (Sequoia 15.1.1) with no issues noted (except for the bugs listed below).
+- The Website was tested on Google Chrome and Firefox browsers on MacOS (Sequoia 15.1.1) and Windows 11 with no issues noted (except for the bugs listed below).
 - When tested on Safari there was a problem with log in, which is described in more detail here: [#84][i84].
 
-## Device Testing (TODO)
+## Device Testing
 
-- The website was viewed on different devices such as Desktop, Laptop, iPhone SE,  and iPad to ensure responsiveness. The responsive design was also checked using Chrome developer tools.
+- The website was viewed on different devices such as laptop, iPhone 8 and iPad to ensure responsiveness. The responsive design was also checked using Chrome developer tools.
+- The issues with Safari also apply to Chrome on iOS. In a discussion on CI's Slack where this problem is addressed, it is mentioned that it affects all browsers on iOS. Chrome settings offer the option to "allow cross-site tracking," but even with that setting enabled, the login still does not work.
 
 ## Bugs
 
