@@ -40,6 +40,7 @@ AlbumTalk (David Bowie edition) is a pilot to test the concept on a smaller scal
     - [Reviews page (THEREVIEWS)](#reviews-page-thereviews)
     - [Add comment](#add-comment)
     - [Comment page](#comment-page)
+    - [Feed page (THEFEED)](#feed-page-thefeed)
   - [Future Features](#future-features)
   - [Reusability](#reusability)
     - [Components](#components)
@@ -214,12 +215,14 @@ Icons are frequently used on the website. They are used partly on the album page
 
 <img src="src/assets/doc_images/features/NavBar.png" width="800" alt="Menu" >
 
-- Depending on if the user has logged in or not there are also options for Sign In, Sign Out and Sign Up
+- Depending on if the user has logged in or not there are also options for Feed, Sign In, Sign Out and Sign Up
 - When the user is logged in, the users Avatar is displayed in the upper right corner
 
 <img src="src/assets/doc_images/features/NavBar_Logged_in.png" width="800" alt="Menu" >
 
 - On smaller screens there's a hamburger menu and a slide out menu to the left with the same options and the same logic for login and logout
+
+Note: The feed feature was added after the following screenshots were taken and is therefore not present in the menu on the screenshots.  
 
 ### Home page / Albums page
 
@@ -291,6 +294,13 @@ Icons are frequently used on the website. They are used partly on the album page
   
   <img src="src/assets/doc_images/features/Comment_dropdown.png" width="400" alt="" >
 
+ ### Feed page (THEFEED)
+
+- When the user is logged in, the option THEFEED is shown in the NavBar menu.
+- When clicking on THEFEED a list of reviews from the users that the logged in user is following is shown.
+  
+  <img src="src/assets/doc_images/features/Feed.png" width="400" alt="" > 
+
 ## Future Features
 
 AlbumTalk David Bowie edition is a proof of concept for how a forum for discussions about artists and their music could look. The idea is for this concept to develop into a platform for discussions about all artists and their albums. The major change in how this proof of concept appears will be the homepage. Instead of going directly to a list of an artist's albums, it could consist of, for example:
@@ -302,6 +312,7 @@ AlbumTalk David Bowie edition is a proof of concept for how a forum for discussi
 
 Proposals for other potential improvements are:
 
+- Review the image handling with regard to performance. In the results from the Lighthouse tests, consistently low performance scores were observed, with image handling being the cause. Currently, images are fetched in JPG format from AudioDB. One solution could be to store the images in a different format and in various sizes when they are retrieved for the first time.
 - More information about users, such as favorite artist, etc. 
 - The possibility to specify a favorite song when reviewing an album
 - The possibility to indicate whether you have a certain album on vinyl/CD 

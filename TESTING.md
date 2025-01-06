@@ -5,10 +5,10 @@
 - [Table of contents](#table-of-contents)
 - [Manual Testing](#manual-testing)
   - [Epic: Account](#epic-account)
-  - [Epic: Navigation (OBS BYT UT BILD 1)](#epic-navigation-obs-byt-ut-bild-1)
+  - [Epic: Navigation](#epic-navigation)
   - [Epic: Albums](#epic-albums)
   - [Epic: Write review](#epic-write-review)
-  - [Epic: Edit and delete review FORTSÄTT HÄR](#epic-edit-and-delete-review-fortsätt-här)
+  - [Epic: Edit and delete review](#epic-edit-and-delete-review)
   - [Epic: View reviews](#epic-view-reviews)
   - [Epic: Comments](#epic-comments)
   - [Epic: Profile page](#epic-profile-page)
@@ -19,7 +19,7 @@
   - [CSS](#css)
   - [Python](#python)
   - [Lighthouse](#lighthouse)
-- [Browser Testing (TODO)](#browser-testing-todo)
+- [Browser Testing](#browser-testing)
 - [Device Testing (TODO)](#device-testing-todo)
 - [Bugs](#bugs)
   - [Fixed Bugs](#fixed-bugs)
@@ -33,30 +33,37 @@ All user stories have been manually tested upon implementation, and this has bee
 
 ### Epic: Account
 
-![Manual Testing - Account](src/assets/doc_images/testing/MT_Acc_1.png)
-![Manual Testing - Account](src/assets/doc_images/testing/MT_Acc_2.png)
-![Manual Testing - Account](src/assets/doc_images/testing/MT_Acc_3.png)
+ <img src="src/assets/doc_images/testing/MT_Acc_1.png" width="890" alt="" >
 
-### Epic: Navigation (OBS BYT UT BILD 1)
+ <img src="src/assets/doc_images/testing/MT_Acc_2.png" width="890" alt="" >
 
-![Manual Testing - Navigation](src/assets/doc_images/testing/MT_Nav_1.png) 
-![Manual Testing - Navigation](src/assets/doc_images/testing/MT_Nav_2.png)
+ <img src="src/assets/doc_images/testing/MT_Acc_3.png" width="890" alt="" >
+
+### Epic: Navigation
+
+ <img src="src/assets/doc_images/testing/MT_Nav_1.png" width="890" alt="" >
+
+ <img src="src/assets/doc_images/testing/MT_Nav_2.png" width="890" alt="" >
 
 ### Epic: Albums
 
-![Manual Testing - Albums](src/assets/doc_images/testing/MT_Alb_1.png)
-![Manual Testing - Albums](src/assets/doc_images/testing/MT_Alb_2.png)
+ <img src="src/assets/doc_images/testing/MT_Alb_1.png" width="890" alt="" >
+
+ <img src="src/assets/doc_images/testing/MT_Alb_2.png" width="890" alt="" >
 
 ### Epic: Write review
 
-![Manual Testing - Write review](src/assets/doc_images/testing/MT_Rev_1.png)
+ <img src="src/assets/doc_images/testing/MT_Rev_1.png" width="890" alt="" >
 
-### Epic: Edit and delete review FORTSÄTT HÄR
+### Epic: Edit and delete review 
 
+ <img src="src/assets/doc_images/testing/MT_Rev_2.png" width="890" alt="" >
 
+The bug is described in more detail here: [#85][i85] 
 
 ### Epic: View reviews
 
+ <img src="src/assets/doc_images/testing/MT_Rev_3.png" width="890" alt="" >
 
 ### Epic: Comments
 
@@ -138,9 +145,10 @@ The low performance score for the album page, among others, is largely due to th
 
 </details>
 
-## Browser Testing (TODO)
+## Browser Testing
 
-- The Website was tested on Google Chrome, Firefox, Safari browsers with no issues noted.
+- The Website was tested on Google Chrome and Firefox browsers on MacOS (Sequoia 15.1.1) with no issues noted (except for the bugs listed below).
+- When tested on Safari there was a problem with log in, which is described in more detail here: [#84][i84].
 
 ## Device Testing (TODO)
 
@@ -168,6 +176,9 @@ Below follows a list of bugs that have not been addressed prior to the first rel
 | Fix Wrong favorite albums shown for logged in user | [#80][i80]   |
 | Fix console warnings                               | [#81][i81]   |
 | Fix Login does not work in safari                  | [#84][i84]   |
+| Fix Can not delete review from album page          | [#85][i85]   |
+
+
 
 [i68]: https://github.com/andersganander/albumtalk/issues/68
 [i75]: https://github.com/andersganander/albumtalk/issues/75
@@ -175,4 +186,4 @@ Below follows a list of bugs that have not been addressed prior to the first rel
 [i80]: https://github.com/andersganander/albumtalk/issues/80
 [i81]: https://github.com/andersganander/albumtalk/issues/81
 [i84]: https://github.com/andersganander/albumtalk/issues/84
-
+[i85]: https://github.com/andersganander/albumtalk/issues/85
