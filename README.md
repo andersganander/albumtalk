@@ -16,12 +16,12 @@ AlbumTalk (David Bowie edition) is a pilot to test the concept on a smaller scal
   - [UX](#ux)
     - [User Goals](#user-goals)
       - [Engage with and discover Albums](#engage-with-and-discover-albums)
-        - [Discover reviews](#discover-reviews)
-        - [Participate in discussions](#participate-in-discussions)
-        - [Build and manage a profile](#build-and-manage-a-profile)
-        - [Navigate and search easily](#navigate-and-search-easily)
-        - [Control personal contributions](#control-personal-contributions)
-        - [Secure access](#secure-access)
+      - [Discover reviews](#discover-reviews)
+      - [Participate in discussions](#participate-in-discussions)
+      - [Build and manage a profile](#build-and-manage-a-profile)
+      - [Navigate and search easily](#navigate-and-search-easily)
+      - [Control personal contributions](#control-personal-contributions)
+      - [Secure access](#secure-access)
     - [Agile and planning](#agile-and-planning)
     - [Wireframes:](#wireframes)
     - [Epics and User Stories:](#epics-and-user-stories)
@@ -32,15 +32,6 @@ AlbumTalk (David Bowie edition) is a pilot to test the concept on a smaller scal
         - [Text Styling](#text-styling)
       - [Imagery and icons](#imagery-and-icons)
   - [Features](#features)
-    - [Navigation](#navigation)
-    - [Home page / Albums page](#home-page--albums-page)
-    - [Sign in page](#sign-in-page)
-    - [Sign up page](#sign-up-page)
-    - [Profile page](#profile-page)
-    - [Reviews page (THEREVIEWS)](#reviews-page-thereviews)
-    - [Add comment](#add-comment)
-    - [Comment page](#comment-page)
-    - [Feed page (THEFEED)](#feed-page-thefeed)
   - [Future Features](#future-features)
   - [Reusability](#reusability)
     - [Components](#components)
@@ -78,33 +69,33 @@ The backend api that is used by AlbumTalk is documented [here](https://github.co
 - Interact with albums by liking favorites and leaving reviews.
 - Use visual ratings to provide feedback.
 
-##### Discover reviews
+#### Discover reviews
 
 - Access and read specific reviews for albums.
 - Browse lists of reviews.
 - Easily find a specific user's reviews.
 
-##### Participate in discussions
+#### Participate in discussions
 
 - Write, edit, and delete comments on reviews.
 
-##### Build and manage a profile
+#### Build and manage a profile
 
 - Create and update a user profile.
 - Access user statistics.
 - Follow and unfollow users, with plans to view followed users' reviews.
 
-##### Navigate and search easily
+#### Navigate and search easily
 
 - Navigate seamlessly between pages with ease.
 - Use infinite scroll functionality for continuous browsing.
 - Search for reviews and albums efficiently.
 
-##### Control personal contributions
+#### Control personal contributions
 
 - Edit and delete personal reviews or comments.
 
-##### Secure access
+#### Secure access
 
 - Create accounts and manage login securely.
 - Update credentials as needed.
@@ -208,7 +199,9 @@ Icons are frequently used on the website. They are used partly on the album page
 
 ## Features
 
-### Navigation
+<details>
+
+<summary>Navigation</summary
 
 - On medium and larger screens, there is a navbar at the top
 - The menu contains options for viewing albums (THEALBUMS) and reviews (THEREVIEWS)
@@ -224,7 +217,11 @@ Icons are frequently used on the website. They are used partly on the album page
 
 Note: The feed feature was added after the following screenshots were taken and is therefore not present in the menu on the screenshots.  
 
-### Home page / Albums page
+</details>
+
+<details>
+
+<summary>Home Page / Albums Page</summary
 
 - The home page is the same as the album page
 - The page contain a scrollable list of all David Bowie albums in chronological order
@@ -245,15 +242,27 @@ Note: The feed feature was added after the following screenshots were taken and 
 
 <img src="src/assets/doc_images/features/AddReview.png" width="400" alt="Home page logged in" >
 
-### Sign in page
+</details>
+
+<details>
+
+<summary>Sign in page</summary>
 
 <img src="src/assets/doc_images/features/Signin.png" width="400" alt="Sign in page" >
 
-### Sign up page
+</details>
+
+<details>
+
+<summary>Sign up page</summary>
 
 <img src="src/assets/doc_images/features/Signup.png" width="400" alt="Sign up page" >
 
-### Profile page
+</details>
+
+<details>
+
+<summary>Profile page</summary>
 
 - At the top, under the profile's name, it shows how many reviews the user has written, how many followers the profile has, and how many other profiles it follows. Then the profiles' introduction.
 - Below the introduction, the user's reviews are displayed.
@@ -274,7 +283,11 @@ Note: The feed feature was added after the following screenshots were taken and 
 
 <img src="src/assets/doc_images/features/ProfilePage_password.png" width="400" alt="" >
 
-### Reviews page (THEREVIEWS)
+</details>
+
+<details>
+
+<summary>Reviews page</summary>
 
 - All reviews are displayed in a scrollable list
 - A search field at the top makes it easy to search for an albums reviews
@@ -282,24 +295,40 @@ Note: The feed feature was added after the following screenshots were taken and 
 
 <img src="src/assets/doc_images/features/ReviewsPage.png" width="400" alt="" >
 
-### Add comment
+</details>
+
+<details>
+
+<summary>Add comment</summary>
+
+- All comments are displayed in a scrollable list
 
 - When the Add comment icon is clicked, a textfield is shown.
 
 <img src="src/assets/doc_images/features/AddComment.png" width="400" alt="" >
 
-### Comment page
+</details>
+
+<details>
+
+<summary>Comment page</summary>
 
 - When the user is logged in, a dropdown menu is shown for the users' comments where the user can choose to edit or delete the comment.
   
   <img src="src/assets/doc_images/features/Comment_dropdown.png" width="400" alt="" >
 
- ### Feed page (THEFEED)
+</details>
+
+<details>
+
+<summary>Feed page</summary>
 
 - When the user is logged in, the option THEFEED is shown in the NavBar menu.
 - When clicking on THEFEED a list of reviews from the users that the logged in user is following is shown.
   
   <img src="src/assets/doc_images/features/Feed.png" width="400" alt="" > 
+
+</details>
 
 ## Future Features
 
