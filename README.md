@@ -468,12 +468,12 @@ This project has greatly benefited from the educational resources and example pr
 
 - [AudioDB](https://www.theaudiodb.com/) - Images on the signin/signup page and album cover images.
 - [Google Fonts](https://www.theaudiodb.com/) - The Bricolage Grotesque fontnand some icons.
-- [Font Awesome](https://fontawesome.com/) - Icons such as star, searchicon and others.
+- [Font Awesome](https://fontawesome.com/) - Icons such as star, search icon and others.
 
 ## Acknowledgements:
 
 - My mentor, Antonio.
-- The Swedish community on Slack, always ready and willing to help and support.
+- The Swedish community on Slack, always there to help and support.
 
  [i5]: https://github.com/andersganander/albumtalk/issues/5
 
